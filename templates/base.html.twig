@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Site sae301{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="style.css">
         <Link Rel="Stylesheet" Href="Https://Cdnjs.Cloudflare.Com/Ajax/Libs/Font-Awesome/5.9.0/Css/All.Css">
@@ -13,12 +13,14 @@
         {% endblock %}
 
         {% block javascripts %}
+            <link href="{{ asset('style.css') }}" rel="stylesheet" />
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+
     {% include('menu.html.twig') %}
         {% block body %}{% endblock %}
-    {% include('footer.html.twig') %}
+
     </body>
 </html>

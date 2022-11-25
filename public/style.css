@@ -1,0 +1,234 @@
+.fa-cart-shopping{
+    font-size: 50px;
+}
+.fa-user{
+    font-size: 50px;
+}
+
+#heroImage{
+    width: 100vw;
+
+
+}
+#heroImage img{
+    width: 100vw;
+}
+#accueil{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+
+}
+#noel{
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-wrap: wrap;
+    justify-content: left;
+
+
+}
+#noel h1{
+
+    margin-top: 50px;
+    margin-left: 15.5vw;
+    font-size: 30px;
+    font-family: "Fjalla One";
+
+}
+#encadre{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+
+}
+
+
+
+
+
+
+.carte img{
+
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width:15vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgb(145, 68, 68);
+}
+.fa-calendar-days{
+    color: rgb(75, 73, 74);
+
+}
+.fa-location-dot{
+    color: rgb(75, 73, 74);
+}
+
+
+.affiche{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+
+}
+.carteBas{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width: 15vw;
+    height: 20vh;
+
+}
+.carteBas p{
+
+    margin-left: 5px;
+
+
+
+}
+.prix{
+    color: crimson;
+}
+.p1{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p2{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p3{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p4{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.parti2{
+    width: 100vw;
+    display: flex;
+
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+.partenaire{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 20vw;
+    height: 15vh;
+
+}
+.partenaire img{
+    width: 100%   ;
+
+    background-size: cover;
+}
+
+#partenaireTitre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100vw;
+    height:10vh;
+}
+#partenaireTitre h2{
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+
+}
+#partenaireTitre h3{
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+
+}
+.trait{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    height: 1px;
+    background-color: #868686;
+}
+.partenaire2{
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 20vw;
+    height: 15vh;
+
+}
+.partenaire2 img{
+    width:60%;
+
+
+    background-size: cover;
+}
+.hehe{
+    width: 20vw;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+@media screen and (max-width:600px) {
+    .prix{
+        color: rgb(211, 185, 41);
+    }
+    .affiche{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 10px 20px;
+
+    }
+    #encadre{
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+
+    }
+
+}
