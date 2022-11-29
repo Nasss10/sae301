@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ManifController extends AbstractController
 {
-    #[Route('/manif', name: 'app_manif')]
+    #[Route('/manifestation', name: 'app_manif')]
     public function afficherManif(ManifestationRepository $manifestationRepository): Response
     {
 

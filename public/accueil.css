@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+body {
+    overflow-x: hidden;
+
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'segoe ui';
+}
+
+.nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-color: #ED4E50;
+    position: relative;
+}
+
+.nav > .nav-header {
+    display: flex;
+}
+.nav-title img{
+    width: 40%;
+
+}
+.nav > .nav-header > .nav-title {
+
+
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+    display: none;
+}
+
+.nav > .nav-links {
+
+    display: flex;
+
+    justify-content: flex-end;
+    font-size: 30px;
+    width: 100vw;
+
+    margin-top: -300px;
+
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+
+
+
+.fa-cart-shopping{
+    font-size: 50px;
+    color: turquoise;
+}
+.fa-user{
+    font-size: 50px;
+    color: turquoise;
+}
+
+#heroImage{
+    width: 100vw;
+
+
+}
+#heroImage img{
+    width: 100vw;
+    margin-top: -17px;
+}
+#accueil{
+    width:100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+#noel{
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+#noel h1{
+
+    margin-top: 50px;
+    margin-left: 15.5vw;
+    font-size: 30px;
+    font-family: "Fjalla One";
+
+}
+#encadre{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+.carte img{
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width:15vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgb(145, 68, 68);
+    width: 100%;
+}
+.fa-calendar-days{
+    color: rgb(75, 73, 74);
+
+}
+.fa-location-dot{
+    color: rgb(75, 73, 74);
+}
+
+
+.affiche{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+
+}
+.carte {
+    width: 11rem;
+}
+.carte > img{
+    width: 100%;
+}
+.carteBas{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width: 11rem;
+    height: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.carteBas p{
+
+    margin-left: 5px;
+    height: 5vh;
+    margin: auto;
+
+
+
+}
+.fa-star{
+    color: crimson;
+    margin-bottom: 5px;
+}
+
+.prix{
+    color: crimson;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.p1{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p2{
+    color: rgb(0, 0, 0);
+
+    font-family: "Fjalla One";
+}
+.p3{
+    color: rgb(0, 0, 0);
+    font-family: "Fjalla One";
+}
+.p4{
+    color: rgb(0, 0, 0);
+    font-family: "Fjalla One";
+}
+.parti2{
+    width: 100vw;
+    display: flex;
+
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+}
+.partenaire{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 20vw;
+    height: 15vh;
+
+}
+.partenaire img{
+    width: 100%   ;
+
+    background-size: cover;
+}
+
+#partenaireTitre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100vw;
+    height:10vh;
+}
+#partenaireTitre h2{
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+
+}
+#partenaireTitre h3{
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+
+}
+.trait{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    height: 1px;
+    background-color: #868686;
+}
+.partenaire2{
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 20vw;
+    height: 15vh;
+
+}
+.partenaire2 img{
+    width:60%;
+
+
+    background-size: cover;
+}
+.hehe{
+    width: 20vw;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+@media screen and (max-width:600px) {
+    .prix{
+        color: rgb(211, 185, 41);
+    }
+    .affiche{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 10px 20px;
+
+    }
+    #encadre{
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+}
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+nav {
+    background: #222;
+    padding: 0 15px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.menu,
+.submenu {
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+.item {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+.menu li.subitem a {
+    padding: 15px;
+}
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.active .item {
+    display: block;
+}
+.button.secondary {
+    /* divider between buttons and menu links */
+    border-bottom: 1px #444 solid;
+}
+/* Submenu up from mobile screens */
+.submenu {
+    display: none;
+}
+.submenu-active .submenu {
+    display: block;
+}
+.has-submenu i {
+    font-size: 12px;
+}
+.has-submenu > a::after {
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    content: "\f078";
+    color: white;
+    padding-left: 5px;
+}
+.subitem a {
+    padding: 10px 15px;
+}
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: #0080ff;
+        border: 1px royalblue solid;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: transparent;
+        border: 1px #0080ff solid;
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+    }
+}
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+    .toggle {
+        display: none;
+    }
+    .submenu-active {
+        border-radius: 0;
+    }
+}
+.grad-bar {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: gradbar 15s ease infinite;
+    -moz-animation: gradbar 15s ease infinite;
+    animation: gradbar 15s ease infinite;
+}
