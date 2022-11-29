@@ -20,4 +20,15 @@ class ManifController extends AbstractController
         ]);
 
     }
+    #[Route('/manif/{id}', name: 'app_manif')]
+    public function afficherDetail(ManifestationRepository $manifestationRepository, $id): Response
+    {
+
+        $manifestations = $manifestationRepository->find($id);
+        return $this->render('manif/manifestationDetail.html.twig', [
+            'Manifestations' => $manifestations,
+
+        ]);
+
+    }
 }

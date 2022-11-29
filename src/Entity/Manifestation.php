@@ -16,7 +16,7 @@ class Manifestation
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 5000)]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]

@@ -10,7 +10,7 @@
         <div id="noel">
             <h1>Noël, le moment d'offrir un moment magique à ses proches</h1>
 
-            <a href="manif" class="hehe"> Voir notre séléction ></a>
+            <a href="manif.php" class="hehe"> Voir notre séléction ></a>
             <div class="trait"></div>
             <div id="encadre">
 
@@ -28,6 +28,8 @@
                         <p class="p2"> <i class="fa-solid fa-location-dot"></i>Accors Arena</p>
 
                         <p class="p3"> <i class="fa-solid fa-calendar-days "></i>  27 janvier 2023</p>
+                        <div class="1star"><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+
                         <p class="p4"> Dès <span class="prix">17$</span></p>
                     </div>
                 </div>
@@ -41,8 +43,8 @@
                     <div class="carteBas">
                         <p class="p1"> Drill FR Tour</p>
                         <p class="p2"> <i class="fa-solid fa-location-dot"></i>Bataclan</p>
-
                         <p class="p3"> <i class="fa-solid fa-calendar-days "></i>  22 décembre 2022</p>
+                        <div class="4star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
                         <p class="p4"> Dès <span class="prix">15$</span></p>
                     </div>
                 </div>
@@ -54,10 +56,12 @@
 
                     </div>
                     <div class="carteBas">
-                        <p class="p1"> Coco JoJo By Guy2bezbar</p>
+                        <p class="p1"> Coco JoJo</p>
                         <p class="p2"> <i class="fa-solid fa-location-dot"></i>Parc des Princes</p>
 
                         <p class="p3"> <i class="fa-solid fa-calendar-days "></i>  27 janvier 2023</p>
+                        <div class="3star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+
                         <p class="p4"> Dès <span class="prix">20$</span></p>
                     </div>
                 </div>
@@ -73,6 +77,8 @@
                         <p class="p2"> <i class="fa-solid fa-location-dot"></i>La renardière</p>
 
                         <p class="p3"> <i class="fa-solid fa-calendar-days "></i>  22 janvier 2023</p>
+                        <div class="2star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+
                         <p class="p4"> Dès <span class="prix">25$</span></p>
                     </div>
                 </div>
@@ -97,16 +103,16 @@
     <div class="parti2">
 
         <div class="partenaire">
-            <img src="{{ asset('pngegg.png') }}" alt="Symfony!" />
+            <img src="{{ asset('pngegg.png') }}">
         </div>
         <div class="partenaire">
-            <img src="{{ asset('inter.png') }}" alt="Symfony!" />
+            <img src="{{ asset('inter.png') }}">
         </div>
         <div class="partenaire">
-            <img src="{{ asset('leclerc.png') }}" alt="Symfony!" />
+            <img src="{{ asset('leclerc.png') }}">
         </div>
         <div class="partenaire">
-            <img src="{{ asset('carrefour.png') }}" alt="Symfony!" />
+            <img src="{{ asset('carrefour.png') }}">
 
         </div>
 
@@ -117,22 +123,22 @@
     <div class="parti2">
 
         <div class="partenaire2">
-            <img src="{{ asset('paiement-sec.jpeg') }}" alt="Symfony!" />
-
+            <img src="{{ asset('paiement-sec.jpeg') }}">
             Paiement 100% sécurisé
         </div>
         <div class="partenaire2">
-            <img src="{{ asset('assistance-téléphonique-de-Solutions-Commerciales-1200x656.png') }}" alt="Symfony!" />
+            <img src="{{ asset('assistance.png') }}">
             assistance 24h/24h
         </div>
         <div class="partenaire2">
-            <img src="{{ asset('rf.png') }}" alt="Symfony!" />
+            <img src="{{ asset('rf.png') }}">
             Remboursement en 24h
         </div>
 
 
     </div>
 
+    </body>
 
 
 {% endblock %}

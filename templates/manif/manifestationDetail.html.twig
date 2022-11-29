@@ -1,0 +1,381 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<body>
+
+<div id="image">
+    <img class="image1"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
+</div>
+<div id="img_concert">
+    <div id="encadre">
+
+
+
+
+
+        <img class="kololo"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
+
+        <div class="titre">
+            <div class="top10"> <p>Top 10 ventes <i class="fa-solid fa-trophy"></i></p></div>
+            <h1>{{ Manifestations.titre }}</h1>
+            <p class="guest">Organisée par : {{ Manifestations.casting }}</p>
+            <div class="katrestar"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>4.0</div>
+            <p><a href="#avis">3 avis</a></p>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+<div id="information">
+
+    <div class="info">
+        <h1>Informations</h1>
+        <p> <i class="fa-solid fa-calendar-days"></i> {{ Manifestations.date }} à {{ Manifestations.horaire }}</p>
+        <p><i class="fa-solid fa-location-pin"></i> Theatre</p>
+        <p> <a href="#localisation">Localiser la salle</a></p>
+    </div>
+
+
+
+    <div class="info">
+        <h1>Présentation</h1>
+        <p>{{ Manifestations.description }} </p>
+    </div>
+
+
+    <div class="reserve">
+        <h1>Réservation</h1>
+        <p>Ticket disponible à {{ Manifestations.prix }}€</p>
+        <button> Réserver</button>
+    </div>
+
+</div>
+
+
+
+<style>
+    body{
+        height: 300vh;
+    }
+    #image{
+        background-size: cover;
+        filter: blur(15px);
+        z-index: 1;
+
+
+    }
+    .image1{
+        background-size: cover;
+        width: 100vw;
+        height: 40vh;
+
+    }
+    #img_concert{
+
+        height: 70vh;
+        margin-left: 100px;
+        margin-top: -200px;
+        display: flex;
+        justify-content: flex-start;
+        z-index: 2;
+    }
+    #encadre{
+        display: flex;
+        width: 100vw;
+        flex-wrap: wrap;
+        z-index: 1;
+        justify-content: flex-start;
+
+
+    }
+    .kololo{
+        width: 30%;
+
+    }
+    .titre{
+        margin-top: 100px;
+        width: 40vw;
+        height: 25vh;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: coral;
+    }
+    .titre h1{
+        font-size: 50px;
+    }
+    .guest{
+        font-size: 20px;
+        color: darkmagenta;
+    }
+    .top10{
+        background-color: cyan;
+        width: 11vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 7px;
+    }
+    .top10 p{
+        margin: auto;
+    }
+    .fa-star{
+        color: crimson;
+        margin-bottom: 5px;
+    }
+    .fa-cart-shopping{
+        font-size: 40px;
+        color: black;
+    }
+    .fa-user{
+        font-size: 40px;
+        color: black;
+
+    }
+    .fa-user:hover{
+        color:rgb(194, 226, 162);
+
+    }
+    .fa-cart-shopping:hover{
+        color:rgb(194, 226, 162);
+
+    }
+    .katrestar{
+        color: crimson;
+        font-size: 20px;
+    }
+
+
+
+
+
+
+
+
+
+    .affiche{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 10px 20px;
+
+    }
+
+
+    body {
+        overflow-x: hidden;
+        font-family: Sans-Serif;
+        margin: 0;
+    }
+
+    .menu-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        background: radial-gradient(circle at -3.93% 12.24%, #ff7845 0, #ff644f 16.67%, #ff4e55 33.33%, #ff3858 50%, #e62159 66.67%, #d0075b 83.33%, #bb005c 100%);;
+        color: #cdcdcd;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+        box-sizing: border-box;
+    }
+
+
+
+    .menu-logo img {
+        max-width: 50%;
+
+
+    }
+
+    .menu-container a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+
+    .menu-container a:hover {
+        color: #00C6A7;
+    }
+
+    .menu-container input {
+        display: block;
+        width: 35px;
+        height: 25px;
+        margin: 0;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+
+    /* Burger menu */
+    .menu-container span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        opacity 0.55s ease;
+    }
+
+    .menu-container span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    .menu-container span:nth-child(3) {
+        transform-origin: 0% 100%;
+    }
+
+    .menu-container input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(3px,-1px);
+        background: #232323;
+    }
+
+    .menu-container input:checked ~ span:nth-child(4) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    .menu-container input:checked ~ span:nth-child(3) {
+        transform: rotate(-45deg) translate(-5px,11px);
+    }
+
+    .menu ul {
+        list-style: none;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /* mobile styles */
+    @media only screen and (max-width: 767px) {
+        .menu-container {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .menu-logo {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .menu-logo img {
+            max-height: 30px;
+        }
+
+        .menu {
+            position: absolute;
+            box-sizing: border-box;
+            width: 300px;
+            right: -300px;
+            top: 0;
+            margin: -20px;
+            padding: 75px 50px 50px;
+            background: #cdcdcd;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+            transform-origin: 0% 0%;
+            transform: translateX(0%);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        .menu-container input:checked ~ .menu {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* desktop styles */
+    @media only screen and (min-width: 768px) {
+        .menu-container {
+            width: 100%;
+        }
+
+        .menu-container a {
+            color: #cdcdcd;
+        }
+
+        .menu-container input {
+            display: none;
+        }
+
+        /* Burger menu */
+        .menu-container span {
+            display: none;
+        }
+
+        .menu {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu ul {
+            display: flex;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 0 20px;
+        }
+    }
+
+
+
+
+    #information{
+        margin-top: 20px;
+        width: 100vw;
+        padding: clamp(1rem,5vw,8rem);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: cornflowerblue;
+        gap: 40px;
+    }
+    .info{
+        width: 300px;
+        height: 20rem;
+
+    }
+    .reserve{
+        width: 300px;
+        height: 20rem;
+        background-color: cyan;
+        display: flex;
+        flex-direction: column;
+
+    }
+    button{
+        border: 1px darkmagenta;
+        margin: auto;
+        width: 50%;
+
+
+    }
+</style>
+</body>
+{% endblock %}
+
