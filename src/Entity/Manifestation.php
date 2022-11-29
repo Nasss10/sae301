@@ -38,7 +38,7 @@ class Manifestation
     private ?string $horaire = null;
 
     #[ORM\ManyToOne(inversedBy: 'manifestations')]
-    private ?lieu $lieu = null;
+    private ?Lieu $lieu = null;
 
 
 

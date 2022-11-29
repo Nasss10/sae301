@@ -104,7 +104,7 @@
              border-radius: 0px 0px 8px 8px;
              box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
              width: 15vw;
-             height: 20vh;
+             height: 24vh;
 
          }
          .carteBas p{
@@ -166,7 +166,7 @@
         <div id="encadre">
             {% for Manifestation in Manifestations %}
             <div class="affiche">
-
+            <a href="{{ path('app_detail', {id:manif.id, genre: manif.genre.nom}) }}">
 
 
 
@@ -180,18 +180,17 @@
 
 
                     <p class="p3"> {{ Manifestation.date }}</p>
+                    <p class="p3"> {{ Manifestation.lieu.lieuNom }}</p>
+
                     <p class="p4"> Dès <span class="prix">{{ Manifestation.prix }}$</span></p>
                 </div>
+            </a>
             </div>
+
             {% endfor %}
 
 
 
 
         </div>
-
-
-
-
-
-{% endblock %}
+        {% endblock %}

@@ -20,7 +20,7 @@ class ManifController extends AbstractController
         ]);
 
     }
-    #[Route('/manif/{id}', name: 'app_manif')]
+    #[Route('/manif/{id}', name: 'app_detail')]
     public function afficherDetail(ManifestationRepository $manifestationRepository, $id): Response
     {
 
