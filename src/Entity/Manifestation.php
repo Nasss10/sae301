@@ -40,8 +40,7 @@ class Manifestation
     #[ORM\ManyToOne(inversedBy: 'manifestations')]
     private ?lieu $lieu = null;
 
-    #[ORM\Column]
-    private ?int $genre_id = null;
+
 
 
 
@@ -158,17 +157,7 @@ class Manifestation
         return $this;
     }
 
-    public function getGenreId(): ?int
-    {
-        return $this->genre_id;
-    }
 
-    public function setGenreId(int $genre_id): self
-    {
-        $this->genre_id = $genre_id;
-
-        return $this;
-    }
 
 
 }
