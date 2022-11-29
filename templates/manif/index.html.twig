@@ -166,12 +166,13 @@
         <div id="encadre">
             {% for Manifestation in Manifestations %}
             <div class="affiche">
-            <a href="{{ path('app_detail', {id:manif.id, genre: manif.genre.nom}) }}">
+            <a href=./manif{{ Manifestation.GetId}}>
 
 
 
                 <div class="carte">
                     <img src="{{ asset("image_sae301/#{Manifestation.affiche}") }}">
+            </a>
 
 
                 </div>
@@ -184,7 +185,7 @@
 
                     <p class="p4"> Dès <span class="prix">{{ Manifestation.prix }}$</span></p>
                 </div>
-            </a>
+
             </div>
 
             {% endfor %}
