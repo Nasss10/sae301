@@ -40,6 +40,9 @@ class Manifestation
     #[ORM\ManyToOne(inversedBy: 'manifestations')]
     private ?lieu $lieu = null;
 
+    #[ORM\Column]
+    private ?int $genre_id = null;
+
 
 
     public function getId(): ?int
@@ -151,6 +154,18 @@ class Manifestation
     public function setLieu(?lieu $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getGenreId(): ?int
+    {
+        return $this->genre_id;
+    }
+
+    public function setGenreId(int $genre_id): self
+    {
+        $this->genre_id = $genre_id;
 
         return $this;
     }
