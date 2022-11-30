@@ -11,6 +11,10 @@
 
 
 }
+a{
+    font-size:20px;
+    color:black;
+}
 .Titre_manif{
     display: flex;
     align-items: center;

@@ -380,10 +380,7 @@ nav {
     background: #222;
     padding: 0 15px;
 }
-a {
-    color: white;
-    text-decoration: none;
-}
+
 .menu,
 .submenu {
     list-style-type: none;
