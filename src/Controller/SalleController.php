@@ -12,11 +12,9 @@ class SalleController extends AbstractController
     #[Route('/salle', name: 'app_salle')]
     public function afficherSalle(LieuRepository $lieuRepository): Response
     {
-
         $lieux = $lieuRepository->findAll();
         return $this->render('salle/index.html.twig', [
             'Lieux' => $lieux,
-
         ]);
     }
 }
