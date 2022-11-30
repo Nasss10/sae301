@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
+
+
+
 {% block body %}
 
-<body>
 
+    <script src="https://kit.fontawesome.com/13e2270482.js" crossorigin="anonymous"></script>
 <div id="image">
     <img class="image1"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
 </div>
@@ -11,6 +14,7 @@
 
 
 
+        <a href="../panier"><i class="fa-solid fa-cart-shopping"></i><span id="panier">0</span></a>
 
 
         <img class="kololo"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
@@ -19,6 +23,7 @@
             <div class="top10"> <p>Top 10 ventes <i class="fa-solid fa-trophy"></i></p></div>
             <h1>{{ Manifestations.titre }}</h1>
             <p class="guest">Organisée par : {{ Manifestations.casting }}</p>
+            <p class="guest">Catégorie : {{ Manifestations.genre }}</p>
             <div class="katrestar"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>4.0</div>
             <p><a href="#avis">3 avis</a></p>
 
@@ -35,13 +40,14 @@
     <div class="info">
         <h1>Informations</h1>
         <p> <i class="fa-solid fa-calendar-days"></i> {{ Manifestations.date }} à {{ Manifestations.horaire }}</p>
-        <p><i class="fa-solid fa-location-pin"></i> Theatre</p>
-        <p> <a href="#localisation">Localiser la salle</a></p>
+        <p><i class="fa-solid fa-location-pin"></i> {{ Manifestations.lieu.lieuNom }} </p>
+        <p> {{ Manifestations.lieu.lieuAdrRue }}</p>
+        <p class="Salle"> <a href="#iframeZone">Localiser la salle</a></p>
     </div>
 
 
 
-    <div class="info">
+    <div class="info2">
         <h1>Présentation</h1>
         <p>{{ Manifestations.description }} </p>
     </div>
@@ -49,18 +55,190 @@
 
     <div class="reserve">
         <h1>Réservation</h1>
-        <p>Ticket disponible à {{ Manifestations.prix }}€</p>
-        <button> Réserver</button>
+        <p>Ticket disponible à </p>
+        <span id="article">{{Manifestations.titre}}</span> - <span id="prix">{{Manifestations.prix}} €</span>
+        <input type="number" value="1" min="1" max="99" id="qte">
+        <input type="hidden" id="id" value="{{ Manifestations.GetId }}">
+        <button id="ajout">ajouter au panier</button>
     </div>
 
+
 </div>
+<div class="trait"></div>
+<div id="avis">
+    <h1>AVIS DES SPECTATEURS</h1>
+    <div class="katrestar"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>4.0</div>
+    <button class="avis_bouton">Laisser un Avis</button>
+</div>
+
+<div class="liste_avis">
+    <div class="avis1">
+        <div class="star"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>5.0</div>
+
+        <p>Excellent moment passé en famille très bonne ambiance, prix très attractifs je recommande vivement.</p>
+        <p class="pseudo_date">JimmyTwig92i - 03/10/22</p>
+        <div class="trait_avis"></div>
+    </div>
+</div>
+<div class="liste_avis">
+    <div class="avis1">
+        <div class="star"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>4.0</div>
+
+        <p>Agréable moment passé avec des amis, personnels très accueillant, je conseil très fortement</p>
+        <p class="pseudo_date">Natalie Duik-bassem94 - 03/10/22</p>
+        <div class="trait_avis"></div>
+    </div>
+</div>
+<div class="liste_avis">
+    <div class="avis1">
+        <div class="star"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>3.0</div>
+
+        <p>Très bon moment passé malgré l’attente un peu longue .</p>
+        <p class="pseudo_date">Patrick Céhessesse213 - 03/10/22</p>
+        <div class="trait_avis"></div>
+    </div>
+</div>
+<div id="iframeZone">
+    <iframe src="{{ Manifestations.map }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div class="trait_avis"></div>
 
 
 
 <style>
+    .Salle{
+        text-decoration: underline;
+    }
+    #information{
+        margin-top: 20px;
+        width: 100vw;
+        padding: clamp(1rem,5vw,8rem);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+    .info{
+        width: 210px;
+        height: 20rem;
+
+    }
+    .info2{
+        width: 500px;
+        height: 20rem;
+
+    }
+    .PrixTicket{
+        font-size: 30px;
+        color: red;
+    }
+
+    .reserve{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+
+
+    }
+    .achat{
+        background-color: rgb(174, 13, 214);
+        width: 150px;
+        height: 70px;
+        font-size: 20px;
+        color: white;
+        font-weight: bolder;
+        border-radius: 8px;
+    }
+    .choix{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin: auto;
+        width: 50%;
+
+
+    }
+    .trait{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 70vw;
+        height: 2px;
+        background-color: #868686;
+        border-radius: 10px;
+    }
+    #avis{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+
+    }
+    .liste_avis{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .avis1{
+        width: 70vw;
+    }
+    .star{
+        color: crimson;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    .pseudo_date{
+        font-size: 15px;
+        font-weight: bolder;
+
+
+    }
+    .trait_avis{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 55vw;
+        height: 1px;
+        background-color: #868686;
+        border-radius: 10px;
+    }
+    .avis_bouton{
+        border: gray;
+        width: 200px;
+        height: 90px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: white;
+        background-color: #9640d7;
+    }
     body{
         height: 300vh;
     }
+    #iframeZone{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top:20px;
+
+    }
+    .iframe {
+        border: 1px solid black;
+        width: 50vw;
+        height: 50vh;
+
+    }
+
     #image{
         background-size: cover;
         filter: blur(15px);
@@ -104,17 +282,21 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background-color: coral;
     }
     .titre h1{
         font-size: 50px;
+        color: white;
     }
     .guest{
-        font-size: 20px;
-        color: darkmagenta;
+        font-size: 30px;
+        color: black;
+        background-color : white;
+        margin-top:30px;
+        font-weight: bolder;
+
     }
     .top10{
-        background-color: cyan;
+        background-color: #ED4E50;
         width: 11vw;
         height: 5vh;
         display: flex;
@@ -150,6 +332,8 @@
     .katrestar{
         color: crimson;
         font-size: 20px;
+        margin-top:20px;
+        font-weight: bolder;
     }
 
 
@@ -175,207 +359,22 @@
         margin: 0;
     }
 
-    .menu-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        background: radial-gradient(circle at -3.93% 12.24%, #ff7845 0, #ff644f 16.67%, #ff4e55 33.33%, #ff3858 50%, #e62159 66.67%, #d0075b 83.33%, #bb005c 100%);;
-        color: #cdcdcd;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-        box-sizing: border-box;
-    }
 
 
 
-    .menu-logo img {
-        max-width: 50%;
+.info p{
+    color: #0f172a;
+    font-size: 17px;
+    margin-bottom: 20px;
+
+}
+.info a{
+    color: #0f172a;
+    font-size: 20px;
+}
 
 
-    }
-
-    .menu-container a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-    }
-
-    .menu-container a:hover {
-        color: #00C6A7;
-    }
-
-    .menu-container input {
-        display: block;
-        width: 35px;
-        height: 25px;
-        margin: 0;
-        position: absolute;
-        cursor: pointer;
-        opacity: 0; /* hide this */
-        z-index: 2; /* and place it over the hamburger */
-        -webkit-touch-callout: none;
-    }
-
-    /* Burger menu */
-    .menu-container span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #cdcdcd;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-        opacity 0.55s ease;
-    }
-
-    .menu-container span:first-child {
-        transform-origin: 0% 0%;
-    }
-
-    .menu-container span:nth-child(3) {
-        transform-origin: 0% 100%;
-    }
-
-    .menu-container input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(3px,-1px);
-        background: #232323;
-    }
-
-    .menu-container input:checked ~ span:nth-child(4) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-
-    .menu-container input:checked ~ span:nth-child(3) {
-        transform: rotate(-45deg) translate(-5px,11px);
-    }
-
-    .menu ul {
-        list-style: none;
-    }
-
-    .menu li {
-        padding: 10px 0;
-        font-size: 22px;
-    }
-
-    /* mobile styles */
-    @media only screen and (max-width: 767px) {
-        .menu-container {
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .menu-logo {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .menu-logo img {
-            max-height: 30px;
-        }
-
-        .menu {
-            position: absolute;
-            box-sizing: border-box;
-            width: 300px;
-            right: -300px;
-            top: 0;
-            margin: -20px;
-            padding: 75px 50px 50px;
-            background: #cdcdcd;
-            -webkit-font-smoothing: antialiased;
-            /* to stop flickering of text in safari */
-            transform-origin: 0% 0%;
-            transform: translateX(0%);
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-        }
-
-        .menu-container input:checked ~ .menu {
-            transform: translateX(-100%);
-        }
-    }
-
-    /* desktop styles */
-    @media only screen and (min-width: 768px) {
-        .menu-container {
-            width: 100%;
-        }
-
-        .menu-container a {
-            color: #cdcdcd;
-        }
-
-        .menu-container input {
-            display: none;
-        }
-
-        /* Burger menu */
-        .menu-container span {
-            display: none;
-        }
-
-        .menu {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .menu ul {
-            display: flex;
-            padding: 0;
-        }
-
-        .menu li {
-            padding: 0 20px;
-        }
-    }
-
-
-
-
-    #information{
-        margin-top: 20px;
-        width: 100vw;
-        padding: clamp(1rem,5vw,8rem);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        background-color: cornflowerblue;
-        gap: 40px;
-    }
-    .info{
-        width: 300px;
-        height: 20rem;
-
-    }
-    .reserve{
-        width: 300px;
-        height: 20rem;
-        background-color: cyan;
-        display: flex;
-        flex-direction: column;
-
-    }
-    button{
-        border: 1px darkmagenta;
-        margin: auto;
-        width: 50%;
-
-
-    }
 </style>
-</body>
+
 {% endblock %}
 

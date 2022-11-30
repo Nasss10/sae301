@@ -10,14 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class SalleController extends AbstractController
 {
     #[Route('/salle', name: 'app_salle')]
-    public function afficherLieu(LieuRepository $lieuRepository): Response
+    public function afficherSalle(LieuRepository $lieuRepository): Response
     {
 
-        $lieu = $lieuRepository->findAll();
+        $lieux = $lieuRepository->findAll();
         return $this->render('salle/index.html.twig', [
-            'Lieu' => $lieu,
+            'Lieux' => $lieux,
 
         ]);
-
     }
 }

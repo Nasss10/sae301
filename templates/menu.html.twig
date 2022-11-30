@@ -193,19 +193,19 @@
     <div class="menu">
 
             <li>
-                <a href="accueil">
+                <a href="/sae/public/index.php/accueil">
                     Accueil
                 </a>
             </li>
             <li>
-                <a href="manif">
+                <a href="/sae/public/index.php/manif">
                     Manif
                 </a>
             </li>
         {% if is_granted("ROLE_ADMIN") %}
             <li>
 
-                <a href="administration">
+                <a href="/sae/public/index.php/admin">
                     Admin
 
                 </a>
@@ -225,13 +225,13 @@
         {% else %}
             <li>
 
-                <a href="login">
+                <a href="/sae/public/index.php/login">
                     connexion
                 </a>
 
         </li>
             <li>
-                <a href="register">
+                <a href="/sae/public/index.php/register">
                     inscription
                 </a>
 

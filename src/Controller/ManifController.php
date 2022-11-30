@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ManifController extends AbstractController
 {
-    #[Route('/manifestation', name: 'app_manif')]
+    #[Route('/manif', name: 'app_manif')]
     public function afficherManif(ManifestationRepository $manifestationRepository): Response
     {
 
@@ -20,7 +20,7 @@ class ManifController extends AbstractController
         ]);
 
     }
-    #[Route('/manif/{id}', name: 'app_detail')]
+    #[Route('manif/{id}', name: 'app_detail')]
     public function afficherDetail(ManifestationRepository $manifestationRepository, $id): Response
     {
 

@@ -40,6 +40,9 @@ class Manifestation
     #[ORM\ManyToOne(inversedBy: 'manifestations')]
     private ?Lieu $lieu = null;
 
+    #[ORM\Column(length: 1000)]
+    private ?string $map = null;
+
 
 
 
@@ -153,6 +156,18 @@ class Manifestation
     public function setLieu(?lieu $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getMap(): ?string
+    {
+        return $this->map;
+    }
+
+    public function setMap(string $map): self
+    {
+        $this->map = $map;
 
         return $this;
     }
