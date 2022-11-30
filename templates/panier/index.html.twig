@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+{% block javascripts %}
+
+    <script type="text/javascript" src="{{ asset('scriptpanier.js') }}" defer />
+
+
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block body %}
+    <body>
+
+    <a href="accueil.html">Accueil</a> |
+    <a href="manifDedans.html">nos produits</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="panier.html">panier</a>
+    <hr>
+
+    <table>
+        <thead>
+        <tbody id="zone">
+        <th>article</th>
+        <th>quantite</th>
+        <th>prix unitaire</th>
+        <th>prix total</th>
+
+        </tbody>
+        </thead>
+        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+
+    </table>
+
+
+    </table>
+    <hr>
+    <form action="finalisation.php" method="post">
+        <input type="hidden" name="liste" id="liste">
+        <input type="submit" value="Valider ma commande.">
+    </form>
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+{% endblock %}
