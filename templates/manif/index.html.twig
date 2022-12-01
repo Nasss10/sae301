@@ -137,7 +137,17 @@
              color: rgb(0, 0, 0);
              font-weight: bolder;
              font-family: "Fjalla One";
-         }</style>
+         }
+
+     #Recherche{
+         width: 100vw;
+         height: 20vh;
+         display: flex;
+         font-size: 30px;
+         align-items: center;
+         justify-content: center;
+     }
+     </style>
 
 
 
@@ -158,9 +168,21 @@
             <h1>Notre Catalogue</h1>
 
         </div>
+<div id="Recherche">
+    Faire uen recherche
+<form method="POST">
+    <select name="genre">
+        <option value="">Choisir...</option>
+        <option value="Concert">Concert</option>
+        <option value="Théâtre">Théâtre</option>
+        <option value="Spectacle">Spectacle</option>
+        <option value="Exposition">Exposition</option>
+    </select>
+    <button type="submit">Rechercher</button>
+</form>
+</div>
 
-
-
+{#form(search_form)#}
 
 
         <div id="encadre">
@@ -194,4 +216,5 @@
 
 
         </div>
+
         {% endblock %}

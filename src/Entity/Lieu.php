@@ -27,6 +27,9 @@ class Lieu
     #[ORM\OneToMany(mappedBy: 'lieu', targetEntity: Manifestation::class)]
     private Collection $manifestations;
 
+    #[ORM\Column(length: 1000)]
+    private ?string $affiche = null;
+
     public function __construct()
     {
         $this->manifestations = new ArrayCollection();
@@ -106,6 +109,18 @@ class Lieu
     public function __toString(): string
     {
         return $this->lieu_nom;
+    }
+
+    public function getAffiche(): ?string
+    {
+        return $this->affiche;
+    }
+
+    public function setAffiche(string $affiche): self
+    {
+        $this->affiche = $affiche;
+
+        return $this;
     }
 }
 
