@@ -8,15 +8,7 @@
 
          @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
          @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-         #encadre{
-             display: flex;
-             width: 100vw;
-             flex-wrap: wrap;
-             align-items: center;
-             justify-content: center;
 
-
-         }
          .Titre_manif{
              display: flex;
              align-items: center;
@@ -27,7 +19,7 @@
          }
          .ligne{
              width: 70vw;
-             height: 1px;
+             height: 2px;
              background-color: black;
              display: flex;
              justify-content: center;
@@ -65,30 +57,14 @@
 
 
 
-         .affiche{
-             display: flex;
-             flex-direction: column;
-             flex-wrap: wrap;
-             margin: 10px 20px;
-
-         }
 
 
 
 
 
 
-         .carte img{
-             box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
-             width:15vw;
-             height: 40vh;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             background-size: cover;
-             border-radius: 8px 8px 0px 0px;
-             background-color: rgb(145, 68, 68);
-         }
+
+
          .fa-calendar-days{
              color: rgb(75, 73, 74);
 
@@ -99,14 +75,7 @@
 
 
 
-         .carteBas{
-             background-color: rgb(238, 238, 238);
-             border-radius: 0px 0px 8px 8px;
-             box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
-             width: 15vw;
-             height: 24vh;
 
-         }
          .carteBas p{
 
              margin-left: 5px;
@@ -142,10 +111,18 @@
      #Recherche{
          width: 100vw;
          height: 20vh;
+         background-color: #00C6A7;
          display: flex;
+         flex-wrap: wrap;
          font-size: 30px;
          align-items: center;
          justify-content: center;
+     }
+     .BoutonRecherche button{
+         font-size: 20px;
+         width: 50px;
+         height: 20px;
+         color: #00C6A7;
      }
      </style>
 
@@ -187,7 +164,9 @@
         <option value="Spectacle">Spectacle</option>
         <option value="Exposition">Exposition</option>
     </select>
-    <button type="submit">Rechercher</button>
+    <div class="BoutonRecherche">
+    <button  type="submit">Rechercher</button>
+    </div>
 </form>
 </div>
 

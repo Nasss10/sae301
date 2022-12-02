@@ -2,8 +2,10 @@
 document.getElementById('ajout').addEventListener('click',function() {
     var id = document.getElementById('id').value
     var article= document.getElementById('article').innerHTML
+    var affiche= document.getElementById('affiche').src
+
     var prix= document.getElementById('prix').innerHTML
-    console.log( id + " " + article + " " + prix )
+    console.log( id + " " + article + " " + prix + " " + affiche )
 
     index = montab.findIndex(element => element.id == id); //trouver l'article dans la liste du panier
     if(index>-1){
@@ -13,7 +15,7 @@ document.getElementById('ajout').addEventListener('click',function() {
     }
     else        {
         console.log("l'article n'est pas pour l'instant dans le panier, il va falloir l'ajouter")
-        montab.push({ 'id': id, 'article': article, 'quantite': document.getElementById('qte').value , 'prix': prix})
+        montab.push({ 'id': id, 'affiche': affiche, 'article': article, 'quantite': document.getElementById('qte').value , 'prix': prix})
         console.log(montab)
     }
 

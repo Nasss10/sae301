@@ -12,7 +12,9 @@ window.addEventListener('load', function () {
     var totalgeneral=0
     montab.forEach(uneinfo => {
 
-        html = `<tr id="${uneinfo.id}"><td>${uneinfo.article}</td>
+        html = `<tr id="${uneinfo.id}">
+<td><img src="${uneinfo.affiche}"></td>
+<td>${uneinfo.article}</td>
 <td>
 <button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button>
 </td>

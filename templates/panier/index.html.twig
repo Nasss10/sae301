@@ -12,6 +12,24 @@
 {% block body %}
     <body>
     <style>
+        #etapePanier1{
+            width: 100vw;
+            height: 5vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grandEtape{
+            font-size: 20px;
+            font-weight: bolder;
+            margin: 30px;
+        }
+        .petitEtape{
+            font-size: 15px;
+            color:rgb(156, 157, 158);
+            margin:30px;
+            opacity:0.7;
+        }
         th {
             color:#D5DDE5;;
             background:#1b1e24;
@@ -25,7 +43,9 @@
             vertical-align:middle;
         }
     </style>
-
+<div id="etapePanier1">
+    <p><span class="grandEtape">1. Ma Commande</span><span class="petitEtape">2. Mes Coordonées</span><span class="petitEtape">3. Paiement</span></p>
+</div>
     <a href=manif>Retour</a>
 
 
@@ -34,6 +54,7 @@
     <table>
         <thead>
         <tbody id="zone">
+        <th>affiche</th>
         <th>article</th>
         <th>quantite</th>
         <th>prix unitaire</th>

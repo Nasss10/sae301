@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SalleController!{% endblock %}
+{% block title %}Nos Salles{% endblock %}
 
 {% block body %}
 
 
 
 
-        <div id="Salle">
-
+        <div class="Salle">
 
     {% for Lieu in Lieux %}
 
-            <div id="encadreSalle">
+
+
+            <div class="encadreSalle">
 
                 <div class="afficheSalle">
                     <div class="carteSalle">
@@ -42,23 +43,20 @@
 
             </div>
         </div>
-
-
-
-
-
+    {% endfor %}
         </div>
+
+
+
+
+
+
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-            #accueil{
-                width:100vw;
-                height: fit-content;
-                display: flex;
-                justify-content: center;
-            }
-            #Salle{
+
+            .Salle{
                 display: flex;
                 width: 100vw;
                 height: fit-content;
@@ -73,7 +71,7 @@
                 font-family: "Fjalla One";
 
             }
-            #encadreSalle{
+            .encadreSalle{
                 display: flex;
                 width: 100vw;
                 flex-wrap: wrap;
@@ -165,6 +163,6 @@
                 font-family: "Fjalla One";
             }
         </style>
-    {% endfor %}
+
 
 {% endblock %}

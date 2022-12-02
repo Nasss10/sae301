@@ -12,9 +12,12 @@
         <div class="mb-3">
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Identifie toi hehe</h1>
+    {% else %}
+        <main class="Connexion">
+            <div class="formul">
+                <h1>Connexion</h1>
+                <div class="formulaire">
+                    <form class="login-form">
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     <label for="inputPassword">Password</label>
@@ -24,6 +27,90 @@
            value="{{ csrf_token('authenticate') }}"
     >
 
+                        <button class="BtnConnexion">Connexion</button>
+                        <p class="message">Pas encore inscrit ? <a href="#">Créer un compte</a></p>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+            .formul {
+                width: 360px;
+                padding: 8% 0 0;
+                margin: auto;
+            }
+            h1{
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+            .formulaire {
+                position: relative;
+                z-index: 1;
+                background: #FFFFFF;
+                max-width: 360px;
+                margin: 0 auto 100px;
+                padding: 45px;
+                text-align: center;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+            .formulaire input {
+                font-family: "Roboto", sans-serif;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            .formulaire button {
+                font-family: "Roboto", sans-serif;
+                text-transform: uppercase;
+                outline: 0;
+                background: #f9c700;
+                width: 100%;
+                border: 0;
+                padding: 15px;
+                color: #FFFFFF;
+                font-size: 14px;
+                -webkit-transition: all 0.3 ease;
+                transition: all 0.3 ease;
+                cursor: pointer;
+            }
+
+            .form .message {
+                margin: 15px 0 0;
+                color: #b3b3b3;
+                font-size: 12px;
+            }
+            .form .message a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+            .formulaire .carre {
+                display: none;
+            }
+
+
+            .Connexion {
+
+                font-family: "Roboto", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        </style>
+    {% endif %}
+{% endblock %}
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
@@ -35,8 +122,5 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
-{% endblock %}
+
+
