@@ -1,3 +1,5 @@
+
+
 window.addEventListener('load', function () {
 
 
@@ -51,14 +53,14 @@ window.addEventListener('load', function () {
     }
 
     document.querySelectorAll('.moins').forEach(clickmoins)
-
     function clickmoins(tag){
         tag.addEventListener('click',function() {
+            // console.log('click moins')
             qte=this.parentNode.querySelector('span').innerHTML;
-            qte--;
+            if (qte>0){qte--};
             this.parentNode.querySelector('span').innerHTML=qte;
             prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
-            total= prix*qte;
+            total= parseFloat(prix)*qte;
             this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
 
             id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
@@ -66,10 +68,15 @@ window.addEventListener('load', function () {
             montab[index].quantite	= parseInt(montab[index].quantite) -1; //incrementer la quantité
             document.cookie = "panier="+JSON.stringify(montab)+"; path=/"  // sauvegarde des infos dans le cookie "liste"
             document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
-            totalgeneral -= 1*prix
+            totalgeneral -= 1* parseFloat(prix)
+            totalgeneral < 0 ? totalgeneral = 0 : totalgeneral = totalgeneral;
+
             document.querySelector('#total').innerHTML=totalgeneral
         })
+
     }
+
+
 
     function recupCookie(nom){
 

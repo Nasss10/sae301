@@ -1,0 +1,71 @@
+<link href="{{ asset('style.css') }}" rel="stylesheet" />
+
+
+
+
+{% block body %}
+
+    <div id="etapePanier1">
+        <p><span class="petitEtape">1. Ma Commande</span><span class="grandEtape">2. Mes Coordonées</span><span class="petitEtape">3. Paiement</span></p>
+    </div></br>
+    <div id="LaPageCoo">
+        <div id="ajouteradresse">
+            <div class="carre">
+                <h1>Ajouter une adresse</h1>
+                <div class="carrebleu">
+                    <h3>Gagnez du temps préremplissez la commande.</h3>
+                    <button class="boutonValider">Autoriser</button>
+                </div></br>
+                <div class="PaysRegion">
+                    <h3>Pays/Region</h3>
+                    <select name= »Choix>
+                        <option>France</option>
+                        <option value= »lien 1″>Allemagne</option>
+                        <option value= »lien 2″>Espagne</option>
+                        <option value= »lien 1″>Angleterre</option>
+                        <option value= »lien 2″>Italie</option>
+                        <option value= »lien 1″>Portugal</option>
+                        <option value= »lien 2″>Serbie</option>
+                        <option value= »lien 1″>Irlande</option>
+                        <option value= »lien 2″>Ecosse</option>
+                    </select>
+
+                </div>
+                <div class="Nomcomplet">
+                    <h3>Nom complet</h3>
+                    <input type="text" class="texte"  placeholder="">
+                </div>
+                <div class="numerotelephone">
+                    <h3>Numéro de téléphone</h3>
+                    <input type="text" class="numerotel"  placeholder="">
+                </div></br>
+                <div class="adresse">
+                    <h3>Adresse</h3>
+                    <input type="text" class="adressetexte"  placeholder="Adresse"></br>
+                    <input type="text" class="adressetexte"  placeholder="Apt, suite ,unité">
+                </div>
+                <div class="codepostal">
+                    <h3>Code postal</h3>
+                    <input type="text" class="codeville"  placeholder=""></br>
+                    <h3>Ville</h3>
+                    <input type="text" class="codeville"  placeholder="">
+                </div></br>
+
+
+
+                <form>
+                    <input type="checkbox" class="checkbox" name="choix1" value="1"> Faire de cette adresse mon adresse par défaut
+
+                </form></br>
+                <a href="/sae/public/index.php/paiement">
+                <button class="boutonValider">Valider et utiliser cette adresse</button>
+                </a>
+
+
+
+
+
+
+            </div>
+        </div>
+{% endblock %}

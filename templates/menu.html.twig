@@ -1,3 +1,112 @@
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <a href="/sae/public/index.php/accueil">
+
+    <div class="logo"><img class="logoPNG"src="{{ asset('mmi.png') }}"></div>
+    </a>
+
+    <!-- NAVIGATION MENU -->
+
+    <ul class="nav-links">
+
+        <!-- USING CHECKBOX HACK -->
+
+
+
+        <!-- NAVIGATION MENUS -->
+
+        <div class="menu">
+
+
+
+            {% if app.user %}
+            <a href="/sae/public/index.php/compte">
+
+                <i class="fa-solid fa-user">
+
+                </i></a>
+            {% else %}
+            <li>
+
+                <a href="/sae/public/index.php/login">
+                    <button class="button-13" role="button">Mon Compte</button>
+
+                </a>
+
+            </li>
+            {% endif %}
+
+
+            <a href="/sae/public/index.php/panier"><i class="fa-solid fa-cart-shopping"></i></a>
+
+        </div>
+
+    </ul>
+
+</nav>
+
+
+
+
+
+
+<nav class="menu-container">
+    <!-- burger menu -->
+    <input type="checkbox" aria-label="Toggle menu" />
+    <span></span>
+    <span></span>
+    <span></span>
+
+
+    <!-- menu items -->
+    <div class="menu2">
+        <ul>
+            <li>
+                <a href="/sae/public/index.php/accueil">
+                    Accueil
+                </a>
+            </li>
+            <li>
+                <a href="/sae/public/index.php/manif">
+
+                Représentation
+                </a>
+            </li>
+            <li>
+                <a href="/sae/public/index.php/salle">
+                    Salle
+                </a>
+            </li>
+            {% if is_granted("ROLE_ADMIN") %}
+                <li>
+
+                    <a href="/sae/public/index.php/admin">
+                        Administration
+
+                    </a>
+                </li>
+            {% endif %}
+
+            <li>
+
+                <a href="logout">
+                    déconnexion
+
+                </a>
+
+            </li>
+
+
+
+        </ul>
+        <ul>
+        </ul>
+    </div>
+</nav>
+
+
 <style>
     body {
         overflow-x: hidden;
@@ -9,27 +118,13 @@
         position: relative;
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
-
+        background: #c08686d0;
         color: #cdcdcd;
-        background: linear-gradient(157deg,#e90964,#ea215c 34%,#eb3059 49%,#ec4354 59%,#ef6348 67%,#f3833f 79%,#f7a24d 86%,#fddb67 97%);
-        width: 100vw;
         padding: 20px;
         z-index: 1;
         -webkit-user-select: none;
         user-select: none;
         box-sizing: border-box;
-    }
-
-    .menu-logo {
-        line-height: 0;
-        margin: 0 20px;
-    }
-
-    .menu-logo img {
-        max-height: 40px;
-        max-width: 100px;
-        flex-shrink: 0;
     }
 
     .menu-container a {
@@ -39,7 +134,7 @@
     }
 
     .menu-container a:hover {
-        color: #00C6A7;
+        color: #000000;
     }
 
     .menu-container input {
@@ -93,38 +188,31 @@
         transform: rotate(-45deg) translate(-5px,11px);
     }
 
-    .menu ul {
+    .menu2 ul {
         list-style: none;
     }
 
-    .menu li {
+    .menu2 li {
         padding: 10px 0;
         font-size: 22px;
     }
 
     /* mobile styles */
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 799px) {
         .menu-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .menu-container2 {
             flex-direction: column;
             align-items: flex-end;
         }
 
-        .menu-logo {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .menu-logo img {
-            max-height: 30px;
-        }
-
-        .menu {
+        .menu2 {
             position: absolute;
             box-sizing: border-box;
             width: 300px;
-            right: -300px;
+            left: -300px;
             top: 0;
             margin: -20px;
             padding: 75px 50px 50px;
@@ -137,12 +225,12 @@
         }
 
         .menu-container input:checked ~ .menu {
-            transform: translateX(-100%);
+            transform: translateX(100%);
         }
     }
 
     /* desktop styles */
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 800px) {
         .menu-container {
             width: 100%;
         }
@@ -160,100 +248,143 @@
             display: none;
         }
 
-        .menu {
+        .menu2 {
             position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
         }
 
-        .menu ul {
+        .menu2 ul {
             display: flex;
             padding: 0;
         }
 
-        .menu li {
+        .menu2 li {
             padding: 0 20px;
         }
     }
+
+
+
+
+
+
+
+
+    .fa-user{
+        font-size: 50px;
+
+    }
+    .fa-cart-shopping{
+        font-size: 50px;
+
+    }
+
+
+
+    .navbar {
+
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+
+
+        background-color: rgb(6, 79, 79);
+
+        color: #fff;
+
+    }
+
+    .nav-links a {
+
+        color: #fff;
+
+    }
+
+    /* LOGO */
+
+    .logoPNG {
+        margin-bottom: -60px;
+        width: 31%;
+
+    }
+
+    /* NAVBAR MENU */
+
+    .menu {
+
+        display: flex;
+
+        gap: 1em;
+
+        font-size: 18px;
+
+    }
+
+    .menu li:hover {
+
+        background-color: #4c9e9e;
+
+        border-radius: 5px;
+
+        transition: 0.3s ease;
+
+    }
+
+    .menu li {
+
+        padding: 5px 14px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .button-13 {
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #0f1111;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Amazon Ember",sans-serif;
+        font-size: 13px;
+        line-height: 29px;
+        padding: 0 10px 0 11px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        width: 100px;
+    }
+
+    .button-13:hover {
+        background-color: #f7fafa;
+    }
+
+    .button-13:focus {
+        border-color: #008296;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        outline: 0;
+    }
 </style>
-<nav class="menu-container">
-    <!-- burger menu -->
-    <input type="checkbox" aria-label="Toggle menu" />
-    <span></span>
-    <span></span>
-    <span></span>
-
-    <!-- logo -->
-    <a href="#" class="menu-logo">
-        <img src="https://wweb.dev/resources/navigation-generator/logo-placeholder.png" alt="My Awesome Website"/>
-    </a>
-
-    <!-- menu items -->
-    <div class="menu">
-
-            <li>
-                <a href="/sae/public/index.php/accueil">
-                    Accueil
-                </a>
-            </li>
-            <li>
-                <a href="/sae/public/index.php/manif">
-                    Manif
-                </a>
-            </li>
-        <li>
-            <a href="/sae/public/index.php/salle">
-                Salle
-            </a>
-        </li>
-        {% if is_granted("ROLE_ADMIN") %}
-            <li>
-
-                <a href="/sae/public/index.php/admin">
-                    Admin
-
-                </a>
-            </li>
-        {% endif %}
-        {% if app.user %}
-            <li>
-
-                <a href="logout">
-                    déconnexion
-
-                </a>
-
-            </li>
 
 
-            <li>{{ app.user.email }}</li>
-
-        {% else %}
-            <li>
-
-                <a href="/sae/public/index.php/login">
-                    connexion
-                </a>
-
-        </li>
-            <li>
-                <a href="/sae/public/index.php/register">
-                    inscription
-                </a>
-
-            </li>
-        {% endif %}
-        <li>
-
-            <a href="/sae/public/index.php/panier"><i class="fa-solid fa-cart-shopping"></i><span id='panier'> 0</span></a>
-
-
-        </li>
-
-        </ul>
-    </div>
-</nav>
 
 
 

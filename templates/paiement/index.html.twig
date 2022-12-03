@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+    <div id="etapePanier1">
+        <p><span class="petitEtape">1. Ma Commande</span><span class="petitEtape">2. Mes Coordonées</span><span class="grandEtape">3. Paiement</span></p>
+    </div>
+
+    <div class="PagePaiement">
+
+        <div class="entier">
+            <div class="haut">
+                <p>Renseignez vos informations Bancaire</p>
+            </div>
+            <div class="infoTout">
+                <div class="texteCarte">
+                    <p > Numéro de Carte</p>
+                    <p> Nom sur la carte</p>
+                    <p> Date d'expiration</p>
+                    <p> Code de Sécurité CCV</p>
+                    <p>Enregistrez pour vos prochains achats</p>
+                </div>
+
+
+
+                <div class="lesInputs">
+                    <input class="RenseigneStp" type="text" id="nom" name="tentacles">
+                    <input class="RenseigneStp" type="texte" id="carte" name="tentacles">
+
+
+                    <div class="selecteSTP">
+                        <select name="date" class="RenseigneStp" id="pet-select">
+                            <option value="date">Mois</option>
+                            <option value="dog">01</option>
+                            <option value="cat">02</option>
+                            <option value="hamster">03</option>
+                            <option value="parrot">04</option>
+                            <option value="spider">05</option>
+                            <option value="goldfish">06</option>
+                            <option value="dog">07</option>
+                            <option value="dog">08</option>
+                            <option value="dog">09</option>
+                            <option value="dog">10</option>
+                            <option value="dog">11</option>
+                            <option value="dog">12</option>
+                        </select>
+
+
+                        <select name="exp" class="RenseigneStp" id="exp">
+                            <option value="date">Année</option>
+                            <option value="dog">2022</option>
+                            <option value="cat">2023</option>
+                            <option value="hamster">2024</option>
+                            <option value="parrot">2025</option>
+                            <option value="spider">2026</option>
+                            <option value="goldfish">2027</option>
+                            <option value="dog">2028</option>
+                            <option value="dog">2029</option>
+                            <option value="dog">2030</option>
+                            <option value="dog">2031</option>
+                            <option value="dog">2032</option>
+                            <option value="dog">2033</option>
+                        </select>
+                    </div>
+                    <input class="RenseigneStp" type="text" id="ccv" name="tentacles">
+                    <input class="RenseigneStp"type="checkbox" name="choix1" value="1">
+
+
+                </div>
+
+
+
+                <div class="traitVertical"></div>
+
+
+                <div class="carteBleu">
+                    <p>MMI Events accepte la plupart des cartes de paiement. Vos informations de paiement sont encryptées et sécurisées à 100%. </p>
+                    <img class="cbAccepter"src="{{ asset('carteBleu.png') }}">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="BoutonFiniLePaiement">
+        <a href="/sae/public/index.php/merci">
+    <button  class="button-85" role="button">Valider le paiement</button>
+        </a>
+    </div>
+
+
+
+
+{% endblock %}

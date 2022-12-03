@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
-body {
-    overflow-x: hidden;
 
-    margin: 0;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0px;
-    font-family: 'segoe ui';
-}
 
 .nav {
     height: 100px;
@@ -172,18 +159,7 @@ body {
 
 
 
-.carte img{
-    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
-    width:15vw;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    border-radius: 8px 8px 0px 0px;
-    background-color: rgb(145, 68, 68);
-    width: 100%;
-}
+
 .fa-calendar-days{
     color: rgb(75, 73, 74);
 
@@ -201,7 +177,7 @@ body {
 
 }
 .carte {
-    width: 11rem;
+    width: 17rem;
 }
 .carte > img{
     width: 100%;

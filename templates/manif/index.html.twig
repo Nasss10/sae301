@@ -111,19 +111,13 @@
      #Recherche{
          width: 100vw;
          height: 20vh;
-         background-color: #00C6A7;
          display: flex;
          flex-wrap: wrap;
          font-size: 30px;
          align-items: center;
          justify-content: center;
      }
-     .BoutonRecherche button{
-         font-size: 20px;
-         width: 50px;
-         height: 20px;
-         color: #00C6A7;
-     }
+
      </style>
 
 
@@ -164,11 +158,15 @@
         <option value="Spectacle">Spectacle</option>
         <option value="Exposition">Exposition</option>
     </select>
-    <div class="BoutonRecherche">
-    <button  type="submit">Rechercher</button>
-    </div>
+
+        <button class="button-84" type="submit" role="button">Rechercher</button>
+
 </form>
 </div>
+
+
+
+
 
 {#form(search_form)#}
 
@@ -181,7 +179,7 @@
 
 
                 <div class="carte">
-                    <img src="{{ asset("image_sae301/#{Manifestation.affiche}") }}">
+                    <img src="{{ asset("image_sae301/#{Manifestation.affiche}") }}" alt="{{ Manifestation.titre }}">
             </a>
 
 
