@@ -3,10 +3,13 @@
 {% block title %}Hello PanierController!{% endblock %}
 {% block javascripts %}
 
+
     <script type="text/javascript" src="{{ asset('scriptpanier.js') }}" defer />
 
 
+
     {{ encore_entry_script_tags('app') }}
+    {{parent()}}
 {% endblock %}
 
 {% block body %}
@@ -42,68 +45,6 @@
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
             vertical-align:middle;
         }
-        #TouteLaPagePanier{
-            width: 100vw;
-            background-color: aqua;
-            display: flex;
-            flex-wrap: wrap ;
-            height: 70vh;
-            justify-content: space-around;
-        }
-        .LePanierDiv{
-            width: 65vw;
-            height: 50vh;
-            background-color: blueviolet;
-            color: aliceblue;
-            border-radius: 8px 8px 8px 8px;
-            display: flex;
-            flex-wrap: wrap;
-
-        }
-        .LeRecapDiv{
-            width: 25vw;
-            height: 30vh;
-            background-color: black;
-            color: aliceblue;
-            display: flex;
-
-            flex-wrap: wrap;
-
-        }
-        .CoteImgDuPanier{
-            border-radius: 8px 0px 0px 0px;
-            width: 30vw;
-            background-color: darkorange;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        }
-        .CoteImgDuPanier2{
-            width: 50%;
-        }
-
-
-
-        .TouteLesInfosPanier{
-            width: 35vw;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            background-color: springgreen;
-
-        }
-        .Les_textes_mettre{
-            width: 20vw;
-            background-color: hotpink;
-
-
-        }
-
-
-
-
-
     </style>
 <div id="etapePanier1">
     <p><span class="grandEtape">1. Ma Commande</span><span class="petitEtape">2. Mes Coordonées</span><span class="petitEtape">3. Paiement</span></p>
@@ -124,22 +65,17 @@
 
         </tbody>
         </thead>
-        <span id="total">0</span>euros
+        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
 
     </table>
 
 
-
-
     </table>
-
     <hr>
-
-
-    <a href="/sae/public/index.php/coordone">
+    <form action="finalisation.php" method="post">
         <input type="hidden" name="liste" id="liste">
         <input type="submit" value="Valider ma commande.">
-    </a>
+    </form>
     <hr>
 
 

@@ -1,266 +1,141 @@
-<style>@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+<footer class="section bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Information</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a href="">Pages</a></li>
+                        <li><a href="">Our Team</a></li>
+                        <li><a href="">Feuchers</a></li>
+                        <li><a href="">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
 
-    * {
-        font-family: Open Sans;
+            <div class="col-lg-3">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a href="">Monitoring Grader </a></li>
+                        <li><a href="">Video Tutorial</a></li>
+                        <li><a href="">Term &amp; Service</a></li>
+                        <li><a href="">Zeeko API</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a href="">Sign Up </a></li>
+                        <li><a href="">Login</a></li>
+                        <li><a href="">Terms of Services</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                    <p class="contact-info mt-4">Contact us if need help withanything</p>
+                    <p class="contact-info">+01 123-456-7890</p>
+                    <div class="mt-5">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#"><i class="fab facebook footer-social-icon fa-facebook-f"></i></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab twitter footer-social-icon fa-twitter"></i></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab google footer-social-icon fa-google"></i></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="footer-alt mb-0 f-14">2019 © Anup, All Rights Reserved</p>
+    </div>
+</footer>
+
+<style>
+    .bg-footer {
+        background-color: #33383c;
+        padding: 50px 0 30px;
     }
-    body{
-        height: 100vh;
+    .footer-heading {
+        letter-spacing: 2px;
     }
-    section {
-        width: 100%;
-        display: inline-block;
-        background: #333;
-        height: 50vh;
+
+    .footer-link a {
+        color: #acacac;
+        line-height: 40px;
+        font-size: 14px;
+        transition: all 0.5s;
+    }
+
+    .footer-link a:hover {
+        color: #1bbc9b;
+    }
+
+    .contact-info {
+        color: #acacac;
+        font-size: 14px;
+    }
+
+    .footer-social-icon {
+        font-size: 15px;
+        height: 34px;
+        width: 34px;
+        line-height: 34px;
+        border-radius: 3px;
         text-align: center;
-        font-size: 22px;
-        font-weight: 700;
-        text-decoration: underline;
+        display: inline-block;
     }
 
-    .footer-distributed{
+    .facebook {
+        background-color: #4e71a8;
+        color: #ffffff;
+    }
 
+    .twitter {
+        background-color: #55acee;
+        color: #ffffff;
+    }
+
+    .google {
+        background-color: #d6492f;
+        color: #ffffff;
+    }
+
+    .apple {
+        background-color: #424041;
+        color: #ffffff;
+    }
+
+    .footer-alt {
+        color: #acacac;
+    }
+
+    .footer-heading {
         position: relative;
-        background: #666;
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-        box-sizing: border-box;
-        width: 100%;
-        text-align: left;
-        font: bold 16px sans-serif;
-        padding: 55px 50px;
+        padding-bottom: 12px;
     }
 
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-center,
-    .footer-distributed .footer-right{
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    /* Footer left */
-
-    .footer-distributed .footer-left{
-        width: 40%;
-    }
-
-    /* The company logo */
-
-    .footer-distributed h3{
-        color:  #ffffff;
-        font: normal 36px 'Open Sans', cursive;
-        margin: 0;
-    }
-
-    .footer-distributed h3 span{
-        color:  lightseagreen;
-    }
-
-    /* Footer links */
-
-    .footer-distributed .footer-links{
-        color:  #ffffff;
-        margin: 20px 0 12px;
-        padding: 0;
-    }
-
-    .footer-distributed .footer-links a{
-        display:inline-block;
-        line-height: 1.8;
-        font-weight:400;
-        text-decoration: none;
-        color:  inherit;
-    }
-
-    .footer-distributed .footer-company-name{
-        color:  #222;
-        font-size: 14px;
-        font-weight: normal;
-        margin: 0;
-    }
-
-    /* Footer Center */
-
-    .footer-distributed .footer-center{
-        width: 35%;
-    }
-
-    .footer-distributed .footer-center i{
-        background-color:  #33383b;
-        color: #ffffff;
-        font-size: 25px;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 42px;
-        margin: 10px 15px;
-        vertical-align: middle;
-    }
-
-    .footer-distributed .footer-center i.fa-envelope{
-        font-size: 17px;
-        line-height: 38px;
-    }
-
-    .footer-distributed .footer-center p{
-        display: inline-block;
-        color: #ffffff;
-        font-weight:400;
-        vertical-align: middle;
-        margin:0;
-    }
-
-    .footer-distributed .footer-center p span{
-        display:block;
-        font-weight: normal;
-        font-size:14px;
-        line-height:2;
-    }
-
-    .footer-distributed .footer-center p a{
-        color:  lightseagreen;
-        text-decoration: none;;
-    }
-
-    .footer-distributed .footer-links a:before {
-        content: "|";
-        font-weight:300;
-        font-size: 20px;
+    .footer-heading:after {
+        content: '';
+        width: 25px;
+        border-bottom: 1px solid #FFF;
+        position: absolute;
         left: 0;
-        color: #fff;
-        display: inline-block;
-        padding-right: 5px;
-    }
-
-    .footer-distributed .footer-links .link-1:before {
-        content: none;
-    }
-
-    /* Footer Right */
-
-    .footer-distributed .footer-right{
-        width: 20%;
-    }
-
-    .footer-distributed .footer-company-about{
-        line-height: 20px;
-        color:  #92999f;
-        font-size: 13px;
-        font-weight: normal;
-        margin: 0;
-    }
-
-    .footer-distributed .footer-company-about span{
+        bottom: 0;
         display: block;
-        color:  #ffffff;
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 20px;
+        border-bottom: 1px solid #1bbc9b;
     }
-
-    .footer-distributed .footer-icons{
-        margin-top: 25px;
-    }
-
-    .footer-distributed .footer-icons a{
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        background-color:  #33383b;
-        border-radius: 2px;
-
-        font-size: 20px;
-        color: #ffffff;
-        text-align: center;
-        line-height: 35px;
-
-        margin-right: 3px;
-        margin-bottom: 5px;
-    }
-
-    /* If you don't want the footer to be responsive, remove these media queries */
-
-    @media (max-width: 880px) {
-
-        .footer-distributed{
-            font: bold 14px sans-serif;
-        }
-
-        .footer-distributed .footer-left,
-        .footer-distributed .footer-center,
-        .footer-distributed .footer-right{
-            display: block;
-            width: 100%;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .footer-distributed .footer-center i{
-            margin-left: 0;
-        }
-
+    footer {
+        margin-top: 100px;
     }
 </style>
-
-
-<footer class="footer-distributed">
-
-    <div class="footer-left">
-
-        <h3>Company<span>logo</span></h3>
-
-        <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-
-            <a href="#">Nassim</a>
-
-            <a href="#">ouali</a>
-
-            <a href="#">Yassine</a>
-
-            <a href="#">Mention Légal</a>
-
-            <a href="#">Contact</a>
-        </p>
-
-        <p class="footer-company-name">Company Name © 2015</p>
-    </div>
-
-    <div class="footer-center">
-
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-        </div>
-
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
-        </div>
-
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
-        </div>
-
-    </div>
-
-    <div class="footer-right">
-
-        <p class="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-        </p>
-
-        <div class="footer-icons">
-
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
-    </div>
-
-</footer>
