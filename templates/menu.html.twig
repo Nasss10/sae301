@@ -65,7 +65,7 @@
 
 
     <!-- menu items -->
-    <div class="menu2">
+    <div class="menu">
         <ul>
             <li>
                 <a href="/">
@@ -74,36 +74,28 @@
             </li>
             <li>
                 <a href="/manif">
-
-                    Évènement
+                    Représentations
                 </a>
             </li>
             <li>
                 <a href="/salle">
-                    Salles
+                    Salle
                 </a>
             </li>
             {% if is_granted("ROLE_ADMIN") %}
-                <li>
-
-                    <a href="/admin">
-                        Administration
-
-                    </a>
-                </li>
-            {% endif %}
-
             <li>
-
+                <a href="/admin">
+                    Administration
+                </a>
+            </li>
+            {% endif %}
+            {% if app.user %}
+            <li>
                 <a href="logout">
                     Déconnexion
-
                 </a>
-
             </li>
-
-
-
+            {% endif %}
         </ul>
         <ul>
         </ul>
@@ -118,14 +110,21 @@
         margin: 0;
     }
 
+    body {
+        overflow-x: hidden;
+        font-family: Sans-Serif;
+        margin: 0;
+    }
+
     .menu-container {
         position: relative;
         display: flex;
         align-items: center;
-background: white;
+        margin-bottom: 20px;
         border: solid black;
+        background: #ffffff;
+        padding: 20px;
         z-index: 1;
-
         -webkit-user-select: none;
         user-select: none;
         box-sizing: border-box;
@@ -133,14 +132,12 @@ background: white;
 
     .menu-container a {
         text-decoration: none;
-        color: white;
-        font-family: 'Lato', sans-serif;
-
+        color: #232323;
         transition: color 0.3s ease;
     }
 
     .menu-container a:hover {
-        color: #000000;
+        color: #00C6A7;
     }
 
     .menu-container input {
@@ -162,7 +159,7 @@ background: white;
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-
+        background: #cdcdcd;
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -194,34 +191,31 @@ background: white;
         transform: rotate(-45deg) translate(-5px,11px);
     }
 
-    .menu2 ul {
+    .menu ul {
         list-style: none;
     }
 
-    .menu2 li {
+    .menu li {
         padding: 10px 0;
         font-size: 22px;
     }
 
     /* mobile styles */
-    @media only screen and (max-width: 799px) {
+    @media only screen and (max-width: 767px) {
         .menu-container {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .menu-container2 {
             flex-direction: column;
             align-items: flex-end;
         }
 
-        .menu2 {
+        .menu {
             position: absolute;
             box-sizing: border-box;
             width: 300px;
-            left: -300px;
+            right: -300px;
             top: 0;
             margin: -20px;
             padding: 75px 50px 50px;
+            background: #cdcdcd;
             -webkit-font-smoothing: antialiased;
             /* to stop flickering of text in safari */
             transform-origin: 0% 0%;
@@ -230,21 +224,21 @@ background: white;
         }
 
         .menu-container input:checked ~ .menu {
-            transform: translateX(100%);
+            transform: translateX(-100%);
         }
     }
 
     /* desktop styles */
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 768px) {
         .menu-container {
             width: 100%;
-
-
         }
 
         .menu-container a {
-            color: black;
-            margin-left: 200px;
+            color: #000000;
+            margin: 80px;
+            font-size: 20px;
+            font-family: Lato;
         }
 
         .menu-container input {
@@ -256,19 +250,19 @@ background: white;
             display: none;
         }
 
-        .menu2 {
+        .menu {
             position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
         }
 
-        .menu2 ul {
+        .menu ul {
             display: flex;
             padding: 0;
         }
 
-        .menu2 li {
+        .menu li {
             padding: 0 20px;
         }
     }
