@@ -15,14 +15,16 @@ window.addEventListener('load', function () {
     montab.forEach(uneinfo => {
 
         html = `<tr id="${uneinfo.id}">
-<td><img src="${uneinfo.affiche}"></td>
+<td><img class="imgPanierRecap"src="${uneinfo.affiche}"></td>
 <td>${uneinfo.article}</td>
 <td>
 <button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button>
+
 </td>
 <td >
-<span class="unitaire">${uneinfo.prix}</span>€</td>
-<td><span class="prix">${parseFloat(uneinfo.prix)* parseInt(uneinfo.quantite)}</span>€</td></tr>`;
+<span class="unitaire">${uneinfo.prix}</span></td>
+<td><span class="prix">${parseFloat(uneinfo.prix)* parseInt(uneinfo.quantite)}</span>€</td></tr>
+`;
 
         document.getElementById('zone').innerHTML += html
         totalgeneral += parseFloat(uneinfo.prix) * parseInt(uneinfo.quantite)

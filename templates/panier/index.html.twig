@@ -32,6 +32,15 @@
             margin:30px;
             opacity:0.7;
         }
+        tr{
+            border-collapse: collapse;
+        }
+        td {
+            background-color: #ffffff;
+            font-size: 30px;
+            width:70vw;
+            font-weight: bolder;
+        }
         th {
             color:#D5DDE5;;
             background:#1b1e24;
@@ -44,27 +53,75 @@
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
             vertical-align:middle;
         }
+        .imgPanierRecap{
+            width:30%;
+            margin-left: 100px;
+        }
+        .PrixUnitairePanier{
+            color: red;
+            font-size: 30px;
+        }
+        .button-27 {
+            display: flex;
+            appearance: none;
+            background-color: #000000;
+            border: 2px solid #1A1A1A;
+            border-radius: 15px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            min-height: 60px;
+            min-width: 0;
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            margin: auto;
+            will-change: transform;
+        }
+
+        .button-27:disabled {
+            pointer-events: none;
+        }
+
+        .button-27:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        .button-27:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
     </style>
 <div id="etapePanier1">
     <p><span class="grandEtape">1. Ma Commande</span><span class="petitEtape">2. Mes Coordonées</span><span class="petitEtape">3. Paiement</span></p>
 </div>
-    <a href=manif>Retour</a>
+    <form action="/manif" method="post">
+        <input type="hidden" name="liste" id="liste">
+        <input type="submit" class="button-27" value="Retour">
+    </form>
 
 
     <hr>
 
     <table>
-        <thead>
+
         <tbody id="zone">
-        <th>affiche</th>
-        <th>article</th>
-        <th>quantite</th>
-        <th>prix unitaire</th>
-        <th>prix total</th>
+
+
 
         </tbody>
-        </thead>
-        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+
+        <tfoot><tr><td id="bas" colspan="3"></td><td>Prix total de la commande <span id="total">0</span>€</td></tr></tfoot>
 
     </table>
 
@@ -73,9 +130,11 @@
     <hr>
     <form action="finalisation.php" method="post">
         <input type="hidden" name="liste" id="liste">
-        <input type="submit" value="Valider ma commande.">
+        <input type="submit" class="button-27" value="Valider ma commande.">
     </form>
     <hr>
+
+
 
 
 

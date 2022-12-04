@@ -2,7 +2,7 @@
 <nav class="navbar">
 
     <!-- LOGO -->
-    <a href="/sae/public/index.php/accueil">
+    <a href="/">
 
     <div class="logo"><img class="logoPNG"src="{{ asset('mmi.png') }}" alt="LogoMMIEvents"></div>
     </a>
@@ -122,8 +122,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        background: linear-gradient(105deg,#6e99e6 ,#093c94);        color: #cdcdcd;
-        padding: 20px;
+background: white;
+        border: solid black;
         z-index: 1;
 
         -webkit-user-select: none;
@@ -133,7 +133,7 @@
 
     .menu-container a {
         text-decoration: none;
-        color: #232323;
+        color: white;
         font-family: 'Lato', sans-serif;
 
         transition: color 0.3s ease;
@@ -162,7 +162,7 @@
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-        background: #cdcdcd;
+
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -222,7 +222,6 @@
             top: 0;
             margin: -20px;
             padding: 75px 50px 50px;
-            background: #cdcdcd;
             -webkit-font-smoothing: antialiased;
             /* to stop flickering of text in safari */
             transform-origin: 0% 0%;
@@ -239,10 +238,13 @@
     @media only screen and (min-width: 800px) {
         .menu-container {
             width: 100%;
+
+
         }
 
         .menu-container a {
-            color: #cdcdcd;
+            color: black;
+            margin-left: 200px;
         }
 
         .menu-container input {
@@ -297,7 +299,7 @@
         justify-content: space-between;
 
 
-        background: linear-gradient(105deg,#6e99e6 ,#093c94);
+        background: -webkit-linear-gradient(157deg,#e90964,#ea215c 34%,#eb3059 49%,#ec4354 59%,#ef6348 67%);
         color: #fff;
 
     }

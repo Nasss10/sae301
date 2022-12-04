@@ -1100,3 +1100,10 @@ button{
     font-family: "Fjalla One";
 }
 
+.messageInscriToi{
+    color: #000000;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+
