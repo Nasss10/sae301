@@ -127,12 +127,26 @@
 
 
     </table>
+
+    {% if app.user %}
     <hr>
-    <form action="finalisation.php" method="post">
+
+    <form action="/coordone" method="post">
         <input type="hidden" name="liste" id="liste">
         <input type="submit" class="button-27" value="Valider ma commande.">
     </form>
+
     <hr>
+    {% else %}
+    <hr>
+
+    <form action="/login" method="post">
+        <input type="hidden" name="liste" id="liste">
+        <input type="submit" class="button-27" value="Connectez vous avant de continuer la commande.">
+    </form>
+
+    <hr>
+    {% endif %}
 
 
 
