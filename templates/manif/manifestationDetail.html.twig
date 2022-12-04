@@ -6,8 +6,8 @@
 
 
     <script src="https://kit.fontawesome.com/13e2270482.js" crossorigin="anonymous"></script>
-<div id="image">
-    <img class="image1"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
+<div id="imageFlou">
+    <img class="image1Flou"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
 </div>
 <div id="img_concert">
     <div id="encadre">
@@ -19,12 +19,13 @@
         <img id="affiche" class="kololo"src="{{ asset("image_sae301/#{Manifestations.affiche}") }}">
 
         <div class="titre">
-            <div class="top10"> <p>Top 10 ventes <i class="fa-solid fa-trophy"></i></p></div>
-            <h1>{{ Manifestations.titre }}</h1>
+            <p class="guest">{{ Manifestations.titre }}</p>
             <p class="guest">Organisé(e) par : {{ Manifestations.casting }}</p>
             <p class="guest">Catégorie : {{ Manifestations.genre }}</p>
             <div class="katrestar"><i class="fa-solid  hhoh fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>4.0</div>
             <p><a href="#avis">3 avis</a></p>
+            <div class="top10"> <p>Top 10 ventes <i class="fa-solid fa-trophy"></i></p></div>
+
 
         </div>
 
@@ -62,10 +63,14 @@
         <p>Ticket disponible à </p>
          - <span id="prix">{{Manifestations.prix}} €</span>
         <input type="number" value="1" min="1" max="99" id="qte">
-        <input type="hidden" id="id" value="{{ Manifestations.GetId }}">
+        <input type="hidden" id="id" value="{{ Manifestations.id }}">
 
         <button id="ajout" class="button-85">ajouter au panier</button>
-            <div id="alert" style="display:none; background-color: #ff0000">L'article a bien été ajouté !</div>
+
+            <div id="alert" style="display:none; background-color: blue">L'article a bien été ajouté !</div>
+        <a href="/panier">
+        <button id="ajout" class="button-85">Achetez Maintenat</button>
+        </a>
 
     </div>
 
@@ -146,10 +151,7 @@
         height: 20rem;
 
     }
-    .PrixTicket{
-        font-size: 30px;
-        color: red;
-    }
+
     .button-85 {
         margin-top: 20px;
         padding: 0.6em 2em;
@@ -227,19 +229,7 @@
 
 
     }
-    .achat{
-        background-color: rgb(174, 13, 214);
-        width: 150px;
-        height: 70px;
-        font-size: 20px;
-        color: white;
-        font-weight: bolder;
-        border-radius: 8px;
-    }
-    .choix{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+
     button{
         margin: auto;
         width: 50%;
@@ -324,14 +314,14 @@
 
     }
 
-    #image{
+    #imageFlou{
         background-size: cover;
         filter: blur(15px);
         z-index: 1;
 
 
     }
-    .image1{
+    .image1Flou{
         background-size: cover;
         width: 100vw;
         height: 40vh;
@@ -357,13 +347,15 @@
     }
     .kololo{
         width: 30%;
+        height:30rem;
 
     }
     .titre{
         margin-top: 100px;
         width: 40vw;
-        height: 25vh;
+        height:20rem;
         margin-left: 20px;
+
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -373,7 +365,17 @@
         color: white;
     }
     .guest{
+
         font-size: 30px;
+        color: black;
+        background-color : white;
+        margin-top:30px;
+        font-weight: bolder;
+
+    }
+    .guest1{
+
+        font-size: 50px;
         color: black;
         background-color : white;
         margin-top:30px;

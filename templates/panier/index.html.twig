@@ -1,15 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block title %}Hello PanierController!{% endblock %}
 {% block javascripts %}
-
 
     <script type="text/javascript" src="{{ asset('scriptpanier.js') }}" defer />
 
 
 
     {{ encore_entry_script_tags('app') }}
-    {{parent()}}
+
 {% endblock %}
 
 {% block body %}

@@ -101,11 +101,17 @@
 }
 .fa-cart-shopping{
     font-size: 50px;
-    color: turquoise;
+    color: white;
 }
 .fa-user{
     font-size: 50px;
-    color: turquoise;
+    color: white;
+}
+.rondChiffrePanier{
+    font-size: 30px;
+    padding:0.5rem;
+    background-color: BLACK;
+    border-radius: 30px 30px 30px 30px;
 }
 
 #heroImage{
