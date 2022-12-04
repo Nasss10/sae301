@@ -631,3 +631,472 @@ input.codeville {
     align-items: center;
     width:35vw;
 }
+
+#Recherche{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+#afficheDuDetail{
+    width:20%;
+}
+.Salle{
+    text-decoration: underline;
+}
+#information{
+    margin-top: 20px;
+    width: 100vw;
+    padding: clamp(1rem,5vw,8rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+.info{
+    width: 210px;
+    height: 20rem;
+
+}
+.info2{
+    width: 500px;
+    height: 20rem;
+
+}
+
+.button-85 {
+    margin-top: 20px;
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(
+            45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.reserve{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+
+}
+
+button{
+    margin: auto;
+    width: 50%;
+
+
+}
+.trait{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 70vw;
+    height: 2px;
+    background-color: #868686;
+    border-radius: 10px;
+}
+#avis{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+.liste_avis{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.avis1{
+    width: 70vw;
+}
+.star{
+    color: crimson;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.pseudo_date{
+    font-size: 15px;
+    font-weight: bolder;
+
+
+}
+.trait_avis{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 55vw;
+    height: 1px;
+    background-color: #868686;
+    border-radius: 10px;
+}
+.avis_bouton{
+    border: gray;
+    width: 200px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background-color: #9640d7;
+}
+
+#iframeZone{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+
+}
+.iframe {
+    border: 1px solid black;
+    width: 50vw;
+    height: 50vh;
+
+}
+
+#imageFlou{
+    background-size: cover;
+    filter: blur(15px);
+    z-index: 1;
+
+
+}
+.image1Flou{
+    background-size: cover;
+    width: 100vw;
+    height: 40vh;
+
+}
+#img_concert{
+
+    height: 70vh;
+    margin-left: 100px;
+    margin-top: -200px;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 2;
+}
+#encadreDuDetail{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    z-index: 1;
+    justify-content: flex-start;
+
+
+}
+.kololo{
+    width: 30%;
+    height:30rem;
+
+}
+.titreDuDetail{
+    margin-top: 100px;
+    width: 40vw;
+    height:20rem;
+    margin-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.titreDuDetail h1{
+    font-size: 50px;
+    color: white;
+}
+.guest{
+
+    font-size: 30px;
+    color: black;
+    background-color : white;
+    margin-top:30px;
+    font-weight: bolder;
+
+}
+
+.top10{
+    background-color: #ED4E50;
+    width: 11vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+}
+.top10 p{
+    margin: auto;
+}
+.fa-star{
+    color: crimson;
+    margin-bottom: 5px;
+}
+
+.katrestar{
+    color: crimson;
+    font-size: 20px;
+    margin-top:20px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info p{
+    color: #0f172a;
+    font-size: 17px;
+    margin-bottom: 20px;
+
+}
+.info a{
+    color: #0f172a;
+    font-size: 20px;
+}
+.formul {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.formulaire {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.formulaire input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.formulaire button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #f9c700;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.formulaire .carre {
+    display: none;
+}
+.Salle{
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+#Salle h1{
+
+    margin-top: 50px;
+    margin-left: 15.5vw;
+    font-size: 30px;
+    font-family: "Fjalla One";
+
+}
+.encadreSalle{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+.carteSalle img{
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width:15vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgb(145, 68, 68);
+    width: 100%;
+}
+.fa-calendar-days{
+    color: rgb(75, 73, 74);
+
+}
+.fa-location-dot{
+    color: rgb(75, 73, 74);
+}
+
+
+.afficheSalle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+
+}
+.carteSalle {
+    width: 25rem;
+}
+.carteSalle > img{
+    width: 100%;
+}
+.carteBasSalle{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 2px 2px 2px 2px rgb(184, 184, 184);
+    width: 25rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.carteBasSalle p{
+
+    margin-left: 5px;
+    height: 2vh;
+
+
+
+}
+.fa-star{
+    color: crimson;
+    margin-bottom: 5px;
+}
+
+
+.p1{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p2{
+    color: rgb(0, 0, 0);
+
+    font-family: "Fjalla One";
+}
+.p3{
+    color: rgb(0, 0, 0);
+    font-family: "Fjalla One";
+}
+
