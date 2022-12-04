@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+
+
 .BoutonFiniLePaiement{
     display: flex;
     align-items: center;
@@ -205,10 +210,6 @@
 .carteBas p{
 
     margin-left: 5px;
-    height: 2vh;
-
-
-
 }
 .fa-star{
     color: crimson;
@@ -1114,5 +1115,30 @@ button{
 .Titre_manif h1{
     font-size: 70px;
     font-weight: bolder;
+}
+.prix{
+    color: crimson;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.p1{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Fjalla One";
+}
+.p2{
+    color: rgb(0, 0, 0);
+
+    font-family: "Fjalla One";
+}
+.p3{
+    color: rgb(0, 0, 0);
+    font-family: "Fjalla One";
+}
+.p4{
+    color: rgb(0, 0, 0);
+    font-family: "Fjalla One";
 }
 
