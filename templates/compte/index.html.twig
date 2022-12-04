@@ -3,7 +3,24 @@
 {% block title %}Hello CompteController!{% endblock %}
 
 {% block body %}
+    <div class="LaPageCompte">
 <h1>Bonjour Monsieur ou Madame</h1>
     <div class="MailDuCompte">{{ app.user.email }}</div>
+    </div>
+
+
+    <style>
+        .LaPageCompte{
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            align-items: center;
+        }
+        .MailDuCompte{
+            font-size:30px;
+            font-weight: bolder;
+            border: solid black;
+        }
+    </style>
 
 {% endblock %}
