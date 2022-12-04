@@ -1105,5 +1105,14 @@ button{
     text-decoration: underline;
     background-color: transparent;
 }
-
+.Titre_manif{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Titre_manif h1{
+    font-size: 70px;
+    font-weight: bolder;
+}
 
