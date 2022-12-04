@@ -392,8 +392,8 @@
 .traitVertical{
     margin-top: 20px;
     height: 0.3vh;
-    width: 80vw;
-    background: linear-gradient(157deg,#e90964,#ea215c 34%,#eb3059 49%,#ec4354 59%,#ef6348 67%,#f3833f 79%,#f7a24d 86%,#fddb67 97%);    margin-left: 100px;
+    width: 59vw;
+    background: linear-gradient(157deg,#e90964,#ea215c 34%,#eb3059 49%,#ec4354 59%,#ef6348 67%,#f3833f 79%,#f7a24d 86%,#fddb67 97%);
 
 }
 .infoTout{
