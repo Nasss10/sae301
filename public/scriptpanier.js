@@ -59,11 +59,8 @@ window.addEventListener('load', function () {
         tag.addEventListener('click',function() {
             // console.log('click moins')
             qte=this.parentNode.querySelector('span').innerHTML;
-            if (qte <= 1) {
-                document.getElementById(id).remove()
-                document.getElementById(id+'b').remove()
-            }
-                this.parentNode.querySelector('span').innerHTML=qte;
+            if (qte>0){qte--};
+            this.parentNode.querySelector('span').innerHTML=qte;
             prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
             total= parseFloat(prix)*qte;
             this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
