@@ -56,17 +56,22 @@ window.addEventListener('load', function () {
 
     document.querySelectorAll('.moins').forEach(clickmoins)
     function clickmoins(tag){
-        tag.addEventListener('click',function() {
-            // console.log('click moins')
-            qte=this.parentNode.querySelector('span').innerHTML;
-            if (qte>0){qte--};
-            this.parentNode.querySelector('span').innerHTML=qte;
-            prix=this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
-            total= parseFloat(prix)*qte;
-            this.parentNode.parentNode.querySelector('.prix').innerHTML=total;
+        function clickmoins(tag){
+            tag.addEventListener('click',function() {
+                qte=this.parentNode.querySelector('span').innerHTML;
+                id = this.parentNode.parentNode.parentNode.parentNode.id; // recupere l'id de l'article cliqué
+                prix = this.parentNode.parentNode.querySelector('.unitaire').innerHTML;
+                if (qte <= 1) {
+                    document.getElementById(id).remove()
+                    document.getElementById(id+'b').remove()
 
-            id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
-            index = montab.findIndex(element => element.id ==id); //trouver l'article dans la liste du panier
+                    totalgeneral -= parseInt(prix)
+                    nbtotal -= 1
+                    document.querySelector('#total').innerHTML=totalgeneral
+                    document.querySelector('#nbtotal').innerHTML=nbtotal
+                    index = montab.findIndex(element => element.id == id); //trouver l'article dans la liste du panier
+                    montab.splice(index, 1);
+                } //trouver l'article dans la liste du panier
             montab[index].quantite	= parseInt(montab[index].quantite) -1; //incrementer la quantité
             document.cookie = "panier="+JSON.stringify(montab)+"; path=/"  // sauvegarde des infos dans le cookie "liste"
             document.getElementById('liste').value=JSON.stringify(montab); // sauver montab pour le formulaire
