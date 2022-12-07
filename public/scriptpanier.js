@@ -19,7 +19,6 @@ window.addEventListener('load', function () {
 <td>${uneinfo.article}</td>
 <td>
 <button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button>
-
 </td>
 <td >
 <span class="unitaire">${uneinfo.prix}</span></td>
