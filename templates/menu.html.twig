@@ -1,56 +1,33 @@
 
-<nav class="navbar">
+<nav class="menu-container">
+    <!-- burger menu -->
+    <input type="checkbox" aria-label="Toggle menu" />
+    <span></span>
+    <span></span>
+    <span></span>
 
-    <!-- LOGO -->
-    <a href="/">
-
-        <div class="logo"><img class="logoPNG"src="{{ asset('mmi.png') }}" alt="LogoMMIEvents"></div>
+    <!-- logo -->
+    <a href="#" class="menu-logo">
+        <img src="https://wweb.dev/resources/navigation-generator/logo-placeholder.png" alt="My Awesome Website"/>
     </a>
 
-
-    <ul class="nav-links">
-
-
-
-
-
-
-
-        <div class="menu">
-
-
-
-            {% if app.user %}
-                <a href="{{ path('app_compte') }}">
-
-                    <i class="fa-solid fa-user">
-
-                    </i></a>
-            {% else %}
-                <li>
-
-                    <a href="{{ path('app_login') }}">
-                        <button class="button-13" role="button">Mon Compte</button>
-
-                    </a>
-
-                </li>
-            {% endif %}
-
-
-
-            <a href="{{ path('app_panier') }}">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="rondChiffrePanier" id='panier'>0</span>
-            </a>
-
-
-        </div>
-
-    </ul>
-
-</nav>
-
+    <!-- menu items -->
+    <div class="menu">
+        <ul>
+        </ul>
+        <ul>
+            <li>
+                <a href="#signup">
+                    Sign-up
+                </a>
+            </li>
+            <li>
+                <a href="#login">
+                    Login
+                </a>
+            </li>
+        </ul>
+    </div>
 
 
 
