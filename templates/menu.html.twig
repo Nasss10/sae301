@@ -1,4 +1,54 @@
 
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <a href="/">
+
+        <div class="logo"><img class="logoPNG"src="{{ asset('mmi.png') }}" alt="LogoMMIEvents"></div>
+    </a>
+
+
+    <ul class="nav-links">
+
+
+
+
+
+
+
+        <div class="menu">
+
+
+
+            {% if app.user %}
+                <a href="{{ path('app_compte') }}">
+
+                    <i class="fa-solid fa-user">
+
+                    </i></a>
+            {% else %}
+                <li>
+
+                    <a href="{{ path('app_login') }}">
+                        <button class="button-13" role="button">Mon Compte</button>
+
+                    </a>
+
+                </li>
+            {% endif %}
+
+
+
+            <a href="{{ path('app_panier') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="rondChiffrePanier" id='panier'>0</span>
+            </a>
+
+
+        </div>
+
+    </ul>
+
 </nav>
 
 
