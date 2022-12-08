@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     {% block javascripts %}
         <link href="{{ asset('style.css') }}" rel="stylesheet" />
@@ -18,8 +18,16 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
     <meta charset="UTF-8">
+    <meta
+            name="description"
+            content="C'est ma sae301 miaou">
+    <meta name="robots" content="noodp,noydir">
+    <link rel="canonical" href="https://mmi21a11.sae301dev.ovh/" />
+    <meta name="keywords" content="référencement,SEO,balise meta keywords">
+
     <title>{% block title %}Site sae301{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     <script src="https://kit.fontawesome.com/13e2270482.js" crossorigin="anonymous"></script>
@@ -34,7 +42,6 @@
 
 {% include('menu.html.twig') %}
 {% block body %}{% endblock %}
-
 
 
 </body>
