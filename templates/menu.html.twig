@@ -42,10 +42,24 @@
         </ul>
         <ul>
             <li>
-                <a href="#signup">
-                    Compte
-                </a>
+                {% if app.user %}
+                <a href="{{ path('app_compte') }}">
+
+                    <i class="fa-solid fa-user">
+
+                    </i></a>
             </li>
+                {% else %}
+                    <li>
+
+                <a href="{{ path('app_login') }}">
+                    <button class="button-13" role="button">Mon Compte</button>
+
+                </a>
+
+            </li>
+            {% endif %}
+
             <li>
                 <a href="#login">
                     Panier
