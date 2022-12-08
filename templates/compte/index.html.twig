@@ -3,25 +3,62 @@
 {% block title %}Hello CompteController!{% endblock %}
 
 {% block body %}
-    <div class="LaPageCompte">
-<h1>Bonjour Monsieur ou Madame</h1>
-    <div class="MailDuCompte">{{ app.user.email }}</div>
+    <div id="PageCompteOk">
+        <div class="ToutPageCompteOk">
+            <div class="InfoConnexionClient">
+                <div class="TraitAcoterInfo"></div>
+                <p class="GrandTexteInfo">INFORMATION DE CONNEXION</p>
+                <div class="TraitAcoterInfo"></div>
+            </div>
+            <div class="LeMailETC">
+                <p class="emailEtMDP">Votre EMAIL : {{ app.user.email }}</p>
+                <p class="emailEtMDP">Votre MOT DE PASSE : *********</p>
+
+            </div>
+        </div>
+
     </div>
 
 
     <style>
-        .LaPageCompte{
+        #PageCompteOk{
             display: flex;
             justify-content: center;
-            width: 100vw;
             align-items: center;
-            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+
         }
-        .MailDuCompte{
-            font-size:30px;
+        .ToutPageCompteOk{
+            width: 65vw;
+            height: 70vh;
+        }
+        .InfoConnexionClient{
+            display: flex;
+            justify-content: space-evenly;
+            width: 65vw;
+            align-items: center;
+
+        }
+        .TraitAcoterInfo{
+            width: 15vw;
+            height: 4px;
+            background-color: black;
+        }
+        .GrandTexteInfo{
+            font-size: 30px;
             font-weight: bolder;
-            border: solid black;
         }
+        .LeMailETC{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .emailEtMDP{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
     </style>
 
 {% endblock %}
