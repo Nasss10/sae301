@@ -3,5 +3,73 @@
 {% block title %}Hello MerciController!{% endblock %}
 
 {% block body %}
-    <h1>Merci {{ app.user.email }} pour votre commande, consultez vos mails afin de recevoir votre E-Ticket</h1>
+    <div id="etapePanier1">
+        <p><span class="petitEtape">1. Ma Commande</span><span class="petitEtape">2. Mes Coordonées</span><span class="petitEtape">3. Paiement</span><span class="grandEtape">4. Validation</span></p>
+    </div>
+
+    <div id="PageMerciCommande">
+        <div class="LacommandeMerci">
+            <i class="fa-solid fa-circle-check"></i>
+            <p class="bonpayeur">PAIEMENT VALIDÉ  AVEC SUCCÈS</p>
+            <p class="LaCommandeop">Commande n°00476 validée le Vendredi 9 Décembre 2022</p>
+            <p class="LaCommandeop">Merci {{ app.user.email }} pour votre commande</p>
+            <form action="/" method="post">
+
+                <input type="submit" class="button-23" value="Revenir à l'accueil">
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+    <style>
+        .fa-circle-check{
+            color: green;
+            font-size: 150px;
+        }
+        #etapePanier1{
+            width: 100vw;
+            height: 5vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grandEtape{
+            font-size: 30px;
+            font-weight: bolder;
+            margin: 30px;
+        }
+        .petitEtape{
+            font-size: 20px;
+            color:rgb(156, 157, 158);
+            margin:30px;
+            opacity:0.7;
+        }
+        #PageMerciCommande{
+            width: 100vw;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .LacommandeMerci{
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            align-items: center;
+        }
+        .bonpayeur{
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .LaCommandeop{
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+
+
 {% endblock %}
