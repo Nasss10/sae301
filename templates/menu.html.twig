@@ -1,29 +1,54 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<nav class="navbar sticky-top navbar-expand-lg bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <a href="/">
+
+        <div class="logo"><img class="logoPNG"src="{{ asset('mmi.png') }}" alt="LogoMMIEvents"></div>
+    </a>
+
+
+    <ul class="nav-links">
+
+
+
+
+
+
+
+        <div class="menu">
+
+
+
+            {% if app.user %}
+                <a href="{{ path('app_compte') }}">
+
+                    <i class="fa-solid fa-user">
+
+                    </i></a>
+            {% else %}
+                <li>
+
+                    <a href="{{ path('app_login') }}">
+                        <button class="button-13" role="button">Mon Compte</button>
+
+                    </a>
+
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Other</a>
-                </li>
-            </ul>
+            {% endif %}
+
+
+
+            <a href="{{ path('app_panier') }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="rondChiffrePanier" id='panier'>0</span>
+            </a>
+
+
         </div>
-    </div>
+
+    </ul>
+
 </nav>
 
 
@@ -31,34 +56,334 @@
 
 
 
+<nav class="menu-container">
+    <!-- burger menu -->
+    <input type="checkbox" aria-label="Toggle menu" />
+    <span></span>
+    <span></span>
+    <span></span>
+
+
+    <!-- menu items -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="/">
+                    Accueil
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_manif') }}">
+                    Représentations
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_salle') }}">
+                    Salle
+                </a>
+            </li>
+            {% if is_granted("ROLE_ADMIN") %}
+                <li>
+                    <a href="/admin">
+                        Administration
+                    </a>
+                </li>
+            {% endif %}
+            {% if app.user %}
+                <li>
+                    <a href="logout">
+                        Déconnexion
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+        <ul>
+        </ul>
+    </div>
+</nav>
 
 
 <style>
-    @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
-    * {
-        font-family: "Titillium Web", sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    body {
+
+        margin: 0;
     }
 
-    .navbar .navbar-brand {
-        font-size: 30px;
+    body {
+        overflow-x: hidden;
+        font-family: Sans-Serif;
+        margin: 0;
     }
-    .navbar .nav-item {
-        padding: 10px 20px;
+
+    .menu-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: solid black;
+        background: #ffffff;
+        padding: 20px;
+        z-index: 1;
+        -webkit-user-select: none;
+        user-select: none;
+        box-sizing: border-box;
     }
-    .navbar .nav-link {
-        font-size: 20px;
-        margin-left: 10px;
+
+    .menu-container a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
     }
-    .fa-bars {
-        color: #007bff;
-        font-size: 30px;
+
+    .menu-container a:hover {
+
+    }
+
+    .menu-container input {
+        display: block;
+        width: 35px;
+        height: 25px;
+        margin: 0;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+
+    /* Burger menu */
+    .menu-container span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+        opacity 0.55s ease;
+    }
+
+    .menu-container span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    .menu-container span:nth-child(3) {
+        transform-origin: 0% 100%;
+    }
+
+    .menu-container input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(3px,-1px);
+        background: #232323;
+    }
+
+    .menu-container input:checked ~ span:nth-child(4) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    .menu-container input:checked ~ span:nth-child(3) {
+        transform: rotate(-45deg) translate(-5px,11px);
+    }
+
+    .menu ul {
+        list-style: none;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    /* mobile styles */
+    @media only screen and (max-width: 767px) {
+        .menu-container {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .menu {
+            position: absolute;
+            box-sizing: border-box;
+            width: 300px;
+            right: -300px;
+            top: 0;
+            margin: -20px;
+            padding: 75px 50px 50px;
+            background: #cdcdcd;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+            transform-origin: 0% 0%;
+            transform: translateX(0%);
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        .menu-container input:checked ~ .menu {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* desktop styles */
+    @media only screen and (min-width: 768px) {
+        .menu-container {
+            width: 100%;
+        }
+
+        .menu-container a {
+            color: #000000;
+            margin: 80px;
+            font-size: 20px;
+            font-family: Lato;
+        }
+
+        .menu-container input {
+            display: none;
+        }
+
+        /* Burger menu */
+        .menu-container span {
+            display: none;
+        }
+
+        .menu {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu ul {
+            display: flex;
+            padding: 0;
+        }
+
+        .menu li {
+            padding: 0 20px;
+        }
     }
 
 
+
+
+
+
+
+
+    .fa-user{
+        font-size: 50px;
+
+    }
+    .fa-cart-shopping{
+        font-size: 50px;
+
+    }
+
+
+
+    .navbar {
+
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+
+
+        background: -webkit-linear-gradient(157deg,#e90964,#ea215c 34%,#eb3059 49%,#ec4354 59%,#ef6348 67%);
+        color: #fff;
+
+    }
+
+    .nav-links a {
+
+        color: #fff;
+
+    }
+
+    /* LOGO */
+
+    .logoPNG {
+        margin-bottom: -60px;
+        width: 31%;
+
+    }
+
+    /* NAVBAR MENU */
+
+    .menu {
+
+        display: flex;
+
+        gap: 1em;
+
+        font-size: 18px;
+
+    }
+
+    .menu li:hover {
+
+
+
+        border-radius: 5px;
+
+        transition: 0.3s ease;
+
+    }
+
+    .menu li {
+
+        padding: 5px 14px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .button-13 {
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #0f1111;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Amazon Ember",sans-serif;
+        font-size: 13px;
+        line-height: 29px;
+        padding: 0 10px 0 11px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        width: 100px;
+    }
+
+    .button-13:hover {
+        background-color: #f7fafa;
+    }
+
+    .button-13:focus {
+        border-color: #008296;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+        outline: 0;
+    }
 </style>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
 
